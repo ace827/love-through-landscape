@@ -3,2189 +3,1347 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Love Through Landscape — Luxury Outdoor Wellness Spaces</title>
-<meta name="description" content="Love Through Landscape designs custom outdoor meditation stations, waterfalls, patios, and private garden retreats for homeowners who want more than just landscaping.">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Love Through Landscape — Luxury Outdoor Wellness Sanctuaries</title>
+<meta name="description" content="Custom outdoor meditation stations, waterfalls, patios, and private garden retreats. Designed for stillness. Built for beauty.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-/* ============================================================
-   CSS VARIABLES & RESET
-   ============================================================ */
+/* ─────────────────────────────────────────────
+   TOKENS
+───────────────────────────────────────────── */
 :root {
-  --deep-green:   #1a2118;
-  --green2:       #243020;
-  --green3:       #2e3d2a;
-  --sage:         #5c6b4e;
-  --sage-light:   #8a9c7a;
-  --cream:        #f6f1e8;
-  --cream2:       #ede7d9;
-  --cream3:       #e4dccb;
-  --stone:        #c4b99a;
-  --gold:         #b8960c;
-  --gold-light:   #d4af37;
-  --brown:        #6b5a3e;
-  --brown-light:  #8c7355;
-  --ink:          #1c1a16;
-  --mid:          #6b6358;
-  --light:        #f9f6f0;
-  --white:        #ffffff;
-  --border:       #ddd5c0;
-  --shadow:       rgba(26,33,24,0.12);
-
-  --font-head: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'Jost', system-ui, sans-serif;
-
-  --radius-sm: 4px;
-  --radius-md: 12px;
-  --radius-lg: 24px;
-  --radius-xl: 40px;
-
-  --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --green-deep:  #18211a;
+  --green-dark:  #222e24;
+  --green-mid:   #354036;
+  --sage:        #6b7d63;
+  --sage-light:  #9aad90;
+  --cream:       #f5f0e6;
+  --cream-mid:   #ece5d5;
+  --cream-dark:  #e0d8c6;
+  --stone:       #c0b49a;
+  --gold:        #b8960c;
+  --gold-light:  #d4af37;
+  --gold-pale:   #f0e4a8;
+  --brown:       #6b5236;
+  --brown-light: #967a55;
+  --ink:         #1a1812;
+  --text:        #4a4438;
+  --text-light:  #7a7060;
+  --white:       #ffffff;
+  --border:      #dad2be;
+  --shadow-sm:   0 2px 12px rgba(24,33,26,.08);
+  --shadow-md:   0 6px 30px rgba(24,33,26,.12);
+  --shadow-lg:   0 16px 60px rgba(24,33,26,.16);
+  --ease:        cubic-bezier(.25,.46,.45,.94);
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
-body {
-  font-family: var(--font-body);
-  background: var(--cream);
-  color: var(--ink);
-  line-height: 1.7;
-  overflow-x: hidden;
+/* ─────────────────────────────────────────────
+   RESET
+───────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Jost',system-ui,sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.7;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
 }
+img{display:block;max-width:100%;height:auto;object-fit:cover}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+input,select,textarea{font-family:inherit}
 
-img { display: block; max-width: 100%; height: auto; }
-a { color: inherit; text-decoration: none; }
-ul { list-style: none; }
-button { cursor: pointer; border: none; background: none; font-family: inherit; }
+/* ─────────────────────────────────────────────
+   TYPE
+───────────────────────────────────────────── */
+h1,h2,h3,h4{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  line-height:1.12;
+  color:var(--green-deep);
+}
+h1{font-size:clamp(2.8rem,6vw,5.8rem);font-weight:300}
+h2{font-size:clamp(2rem,4vw,3.6rem);font-weight:300}
+h3{font-size:clamp(1.4rem,2.5vw,2.1rem);font-weight:400}
+h4{font-size:1.15rem;font-weight:500}
+p{color:var(--text-light);font-weight:300;font-size:1.05rem;line-height:1.8}
 
-/* ============================================================
-   TYPOGRAPHY
-   ============================================================ */
-h1, h2, h3, h4 {
-  font-family: var(--font-head);
-  line-height: 1.15;
-  letter-spacing: -0.01em;
-  color: var(--deep-green);
+.eyebrow{
+  display:block;
+  font-family:'Jost',sans-serif;
+  font-size:.68rem;
+  font-weight:600;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:1rem;
 }
-h1 { font-size: clamp(2.8rem, 6vw, 5.5rem); font-weight: 300; }
-h2 { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 300; }
-h3 { font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 400; }
-h4 { font-size: 1.2rem; font-weight: 500; }
-p { color: var(--mid); font-weight: 300; font-size: 1.05rem; }
+.divider{width:48px;height:1px;background:var(--gold);margin:1.4rem auto}
+.divider-left{width:48px;height:1px;background:var(--gold);margin:1.4rem 0}
 
-.eyebrow {
-  font-family: var(--font-body);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold);
-  display: block;
-  margin-bottom: 1rem;
-}
+/* ─────────────────────────────────────────────
+   LAYOUT HELPERS
+───────────────────────────────────────────── */
+.wrap{max-width:1200px;margin:0 auto;padding:0 2rem}
+.wrap-sm{max-width:780px;margin:0 auto;padding:0 2rem}
+.sec{padding:7rem 2rem}
+.sec-sm{padding:5rem 2rem}
+.text-center{text-align:center}
+.text-center p{max-width:580px;margin-left:auto;margin-right:auto}
 
-/* ============================================================
-   PAGE ROUTING
-   ============================================================ */
-.page { display: none; }
-.page.active { display: block; }
-
-/* ============================================================
-   NAVIGATION
-   ============================================================ */
-#navbar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 1000;
-  padding: 0 2rem;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  transition: background var(--transition), box-shadow var(--transition);
-}
-#navbar.scrolled {
-  background: rgba(26,33,24,0.97);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 30px var(--shadow);
-}
-#navbar.light {
-  background: rgba(246,241,232,0.97);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 20px var(--shadow);
-}
-
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  cursor: pointer;
-}
-.nav-logo-mark {
-  width: 44px;
-  height: 44px;
-  background: var(--gold);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.nav-logo-mark svg { width: 24px; height: 24px; }
-.nav-brand {
-  display: flex;
-  flex-direction: column;
-}
-.nav-brand-name {
-  font-family: var(--font-head);
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: var(--white);
-  line-height: 1.1;
-  transition: color var(--transition);
-}
-.nav-brand-tag {
-  font-size: 0.65rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--stone);
-  transition: color var(--transition);
-}
-#navbar.light .nav-brand-name { color: var(--deep-green); }
-#navbar.light .nav-brand-tag { color: var(--sage); }
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 2.5rem;
-}
-.nav-links a {
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.75);
-  transition: color var(--transition);
-  cursor: pointer;
-}
-.nav-links a:hover, .nav-links a.active-link { color: var(--gold-light); }
-#navbar.light .nav-links a { color: var(--brown); }
-#navbar.light .nav-links a:hover, #navbar.light .nav-links a.active-link { color: var(--gold); }
-
-.nav-cta {
-  padding: 0.6rem 1.5rem;
-  background: var(--gold);
-  color: var(--white) !important;
-  border-radius: 30px;
-  font-size: 0.75rem !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.1em !important;
-  text-transform: uppercase !important;
-  transition: background var(--transition), transform 0.2s !important;
-}
-.nav-cta:hover {
-  background: var(--gold-light) !important;
-  transform: translateY(-1px);
-  color: var(--white) !important;
-}
-
-.nav-hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  padding: 8px;
-}
-.nav-hamburger span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--white);
-  border-radius: 2px;
-  transition: all 0.3s;
-}
-#navbar.light .nav-hamburger span { background: var(--deep-green); }
-
-/* Mobile Nav */
-.mobile-nav {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: var(--deep-green);
-  z-index: 999;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-}
-.mobile-nav.open { display: flex; }
-.mobile-nav a {
-  font-family: var(--font-head);
-  font-size: 2.2rem;
-  font-weight: 300;
-  color: var(--cream);
-  cursor: pointer;
-  transition: color var(--transition);
-}
-.mobile-nav a:hover { color: var(--gold-light); }
-.mobile-nav-close {
-  position: absolute;
-  top: 1.5rem; right: 2rem;
-  font-size: 2rem;
-  color: var(--cream);
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-/* ============================================================
+/* ─────────────────────────────────────────────
    BUTTONS
-   ============================================================ */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 2.2rem;
-  border-radius: 50px;
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  transition: all var(--transition);
-  cursor: pointer;
+───────────────────────────────────────────── */
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.9rem 2rem;border-radius:50px;
+  font-family:'Jost',sans-serif;font-size:.78rem;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;
+  transition:all .35s var(--ease);cursor:pointer;
+  white-space:nowrap;
 }
-.btn-primary {
-  background: var(--gold);
-  color: var(--white);
-  border: 2px solid var(--gold);
+.btn-gold{background:var(--gold);color:#fff;border:2px solid var(--gold)}
+.btn-gold:hover{background:var(--gold-light);border-color:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 28px rgba(184,150,12,.35)}
+.btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.55)}
+.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff;transform:translateY(-2px)}
+.btn-ghost-dark{background:transparent;color:var(--green-deep);border:2px solid var(--green-deep)}
+.btn-ghost-dark:hover{background:var(--green-deep);color:#fff;transform:translateY(-2px)}
+
+/* ─────────────────────────────────────────────
+   ANIMATIONS
+───────────────────────────────────────────── */
+.anim{opacity:0;transform:translateY(36px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.anim.from-left{transform:translateX(-48px)}
+.anim.from-right{transform:translateX(48px)}
+.anim.visible{opacity:1;transform:translate(0)}
+.delay-1{transition-delay:.1s}
+.delay-2{transition-delay:.2s}
+.delay-3{transition-delay:.3s}
+.delay-4{transition-delay:.4s}
+.delay-5{transition-delay:.5s}
+.delay-6{transition-delay:.6s}
+
+/* ─────────────────────────────────────────────
+   PAGE SWITCHING
+───────────────────────────────────────────── */
+.page{display:none}
+.page.active{display:block}
+
+/* ─────────────────────────────────────────────
+   NAV
+───────────────────────────────────────────── */
+#nav{
+  position:fixed;top:0;left:0;right:0;z-index:900;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 2.5rem;height:76px;
+  transition:background .4s var(--ease),box-shadow .4s var(--ease);
 }
-.btn-primary:hover {
-  background: var(--gold-light);
-  border-color: var(--gold-light);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(184,150,12,0.35);
+#nav.solid{background:rgba(24,33,26,.96);backdrop-filter:blur(12px);box-shadow:0 2px 24px rgba(0,0,0,.2)}
+#nav.solid-light{background:rgba(245,240,230,.97);backdrop-filter:blur(12px);box-shadow:var(--shadow-sm)}
+
+.nav-logo{display:flex;align-items:center;gap:.8rem;cursor:pointer}
+.nav-logo-mark{
+  width:42px;height:42px;border-radius:50%;
+  background:var(--gold);display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
 }
-.btn-outline {
-  background: transparent;
-  color: var(--white);
-  border: 2px solid rgba(255,255,255,0.5);
+.nav-logo-mark svg{width:22px;height:22px}
+.nav-name{
+  font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;
+  color:#fff;line-height:1.15;transition:color .3s;
 }
-.btn-outline:hover {
-  background: rgba(255,255,255,0.1);
-  border-color: var(--white);
-  transform: translateY(-2px);
+.nav-sub{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);transition:color .3s}
+#nav.solid-light .nav-name{color:var(--green-deep)}
+#nav.solid-light .nav-sub{color:var(--sage)}
+
+.nav-links{display:flex;align-items:center;gap:2.2rem}
+.nav-links a{
+  font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;
+  color:rgba(255,255,255,.72);transition:color .3s;cursor:pointer;
 }
-.btn-outline-dark {
-  background: transparent;
-  color: var(--deep-green);
-  border: 2px solid var(--deep-green);
+.nav-links a:hover,.nav-links a.active{color:var(--gold-light)}
+#nav.solid-light .nav-links a{color:var(--brown)}
+#nav.solid-light .nav-links a:hover,#nav.solid-light .nav-links a.active{color:var(--gold)}
+
+.nav-cta-btn{
+  padding:.55rem 1.4rem;border-radius:30px;
+  background:var(--gold);color:#fff !important;
+  font-size:.72rem !important;font-weight:600 !important;letter-spacing:.1em !important;
+  transition:background .3s,transform .2s !important;
 }
-.btn-outline-dark:hover {
-  background: var(--deep-green);
-  color: var(--white);
-  transform: translateY(-2px);
+.nav-cta-btn:hover{background:var(--gold-light) !important;transform:translateY(-1px) !important}
+
+.nav-burger{display:none;flex-direction:column;gap:5px;padding:8px}
+.nav-burger span{display:block;width:22px;height:1.5px;background:#fff;border-radius:2px;transition:.3s}
+#nav.solid-light .nav-burger span{background:var(--green-deep)}
+
+/* Mobile overlay */
+.mob-nav{
+  display:none;position:fixed;inset:0;z-index:850;
+  background:var(--green-deep);flex-direction:column;
+  align-items:center;justify-content:center;gap:2.2rem;
+}
+.mob-nav.open{display:flex}
+.mob-nav a{
+  font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;
+  color:var(--cream);cursor:pointer;transition:color .3s;
+}
+.mob-nav a:hover{color:var(--gold-light)}
+.mob-close{position:absolute;top:1.2rem;right:1.8rem;font-size:2.2rem;color:var(--cream);padding:.5rem}
+
+/* ─────────────────────────────────────────────
+   ██   HOME
+───────────────────────────────────────────── */
+
+/* Hero */
+.hero{
+  min-height:100vh;position:relative;
+  display:flex;align-items:flex-end;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('https://images.unsplash.com/photo-1506773090264-ac0b07293a64?w=1920&q=85') center 40%/cover no-repeat;
+}
+.hero-bg::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(18,26,19,.15) 0%,rgba(18,26,19,.05) 35%,rgba(18,26,19,.6) 70%,rgba(18,26,19,.93) 100%);
+}
+.hero-content{
+  position:relative;z-index:2;width:100%;
+  max-width:1200px;margin:0 auto;padding:0 2.5rem 7rem;
+}
+.hero-badge{
+  display:inline-block;
+  border:1px solid rgba(212,175,55,.45);
+  background:rgba(184,150,12,.18);
+  color:var(--gold-light);
+  font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  padding:.38rem 1.1rem;border-radius:30px;
+  backdrop-filter:blur(4px);margin-bottom:1.4rem;
+}
+.hero h1{color:#fff;max-width:860px;margin-bottom:1.3rem}
+.hero h1 em{font-style:normal;color:var(--gold-light)}
+.hero-desc{
+  color:rgba(245,240,230,.78);font-size:1.1rem;font-weight:300;
+  max-width:560px;margin-bottom:2.4rem;
+}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.hero-scroll-hint{
+  position:absolute;right:2.5rem;bottom:2.5rem;z-index:2;
+  display:flex;flex-direction:column;align-items:center;gap:.5rem;
+  color:rgba(255,255,255,.4);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;
+}
+.scroll-bar{width:1px;height:56px;background:linear-gradient(to bottom,transparent,rgba(255,255,255,.35))}
+
+/* Intro dark band */
+.intro-band{background:var(--green-dark);padding:5.5rem 2rem}
+.intro-band-grid{
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;
+}
+.intro-band h2{color:var(--cream)}
+.intro-band p{color:rgba(245,240,230,.65);margin-top:1rem;margin-bottom:2rem}
+.intro-stats{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.stat{border-left:2px solid var(--gold);padding-left:1.1rem}
+.stat-n{
+  font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;
+  color:var(--gold-light);line-height:1;margin-bottom:.25rem;
+}
+.stat-l{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,240,230,.45)}
+
+/* Signature cards */
+.cards-sec{background:var(--cream-mid)}
+.cards-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;
+  max-width:1200px;margin:0 auto;
+}
+.card{
+  background:#fff;border-radius:20px;overflow:hidden;
+  box-shadow:var(--shadow-sm);transition:transform .4s var(--ease),box-shadow .4s var(--ease);
+  cursor:pointer;
+}
+.card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg)}
+.card-img{height:230px;overflow:hidden}
+.card-img img{width:100%;height:100%;transition:transform .9s var(--ease)}
+.card:hover .card-img img{transform:scale(1.07)}
+.card-body{padding:1.6rem}
+.card-icon{
+  width:40px;height:40px;border-radius:50%;
+  background:var(--cream-mid);display:flex;align-items:center;justify-content:center;
+  margin-bottom:.9rem;
+}
+.card-icon svg{width:20px;height:20px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:1.35rem;margin-bottom:.5rem;color:var(--green-deep)}
+.card p{font-size:.92rem}
+
+/* Philosophy split */
+.phil-sec{background:var(--cream)}
+.phil-inner{
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;
+}
+.phil-img-wrap{position:relative}
+.phil-img{border-radius:28px;overflow:hidden;aspect-ratio:4/5;box-shadow:var(--shadow-lg)}
+.phil-img img{width:100%;height:100%;object-fit:cover}
+.phil-badge{
+  position:absolute;bottom:-1.2rem;right:-1.2rem;
+  background:var(--green-deep);color:var(--cream);
+  padding:1.6rem;border-radius:16px;text-align:center;min-width:150px;
+  box-shadow:var(--shadow-md);
+}
+.phil-badge-n{
+  font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;
+  color:var(--gold-light);line-height:1;
+}
+.phil-badge-l{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-top:.25rem}
+.check-list{margin-top:1.6rem;display:flex;flex-direction:column;gap:.8rem}
+.check-list li{
+  display:flex;align-items:flex-start;gap:.7rem;
+  font-size:.95rem;color:var(--text-light);font-weight:300;
+}
+.check-list li::before{
+  content:'';display:block;width:6px;height:6px;border-radius:50%;
+  background:var(--gold);margin-top:.65rem;flex-shrink:0;
 }
 
-/* ============================================================
-   SCROLL ANIMATIONS
-   ============================================================ */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+/* Gallery preview */
+.gal-preview{background:var(--green-deep);padding:7rem 2rem}
+.gal-preview h2,.gal-preview .eyebrow{text-align:center}
+.gal-preview h2{color:var(--cream);margin-top:.4rem}
+.gal-preview .divider{background:var(--gold)}
+.gal-preview > .wrap > p{color:rgba(245,240,230,.55);text-align:center;margin-bottom:3rem}
+.gal-grid{
+  display:grid;
+  grid-template-columns:1.6fr 1fr 1fr;
+  grid-template-rows:260px 260px;
+  gap:1rem;
+  max-width:1200px;margin:0 auto;
 }
-.reveal.in { opacity: 1; transform: translateY(0); }
-.rl {
-  opacity: 0;
-  transform: translateX(-50px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
+.gal-item{border-radius:14px;overflow:hidden;position:relative;cursor:pointer}
+.gal-item:first-child{grid-row:1/3}
+.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.gal-item:hover img{transform:scale(1.07)}
+.gal-item::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(18,26,19,.5),transparent 55%);
+  opacity:0;transition:opacity .4s;
 }
-.rl.in { opacity: 1; transform: translateX(0); }
-.rr {
-  opacity: 0;
-  transform: translateX(50px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
-}
-.rr.in { opacity: 1; transform: translateX(0); }
-.d1 { transition-delay: 0.1s; }
-.d2 { transition-delay: 0.2s; }
-.d3 { transition-delay: 0.3s; }
-.d4 { transition-delay: 0.4s; }
-.d5 { transition-delay: 0.5s; }
-.d6 { transition-delay: 0.6s; }
+.gal-item:hover::after{opacity:1}
 
-/* ============================================================
-   SECTION UTILITIES
-   ============================================================ */
-.section { padding: 7rem 2rem; }
-.section-sm { padding: 5rem 2rem; }
-.container { max-width: 1200px; margin: 0 auto; }
-.container-narrow { max-width: 800px; margin: 0 auto; }
-.section-header { text-align: center; margin-bottom: 4rem; }
-.section-header p { max-width: 560px; margin: 1.2rem auto 0; }
+/* Testimonials */
+.testi-sec{background:var(--cream-mid)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem}
+.testi{
+  background:#fff;border-radius:20px;padding:2.2rem;
+  box-shadow:var(--shadow-sm);position:relative;
+}
+.testi::before{
+  content:'\201C';position:absolute;top:1.2rem;left:1.8rem;
+  font-family:'Cormorant Garamond',serif;font-size:5rem;
+  color:var(--cream-dark);line-height:1;pointer-events:none;
+}
+.stars{color:var(--gold);letter-spacing:2px;font-size:.85rem;margin-bottom:.8rem}
+.testi-text{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:1.1rem;color:var(--green-deep);line-height:1.65;
+  margin-bottom:1.4rem;position:relative;z-index:1;
+}
+.testi-author{display:flex;align-items:center;gap:.75rem}
+.avatar{
+  width:42px;height:42px;border-radius:50%;background:var(--cream-dark);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--brown);
+  flex-shrink:0;
+}
+.author-name{font-weight:600;font-size:.88rem;color:var(--green-deep)}
+.author-loc{font-size:.78rem;color:var(--text-light)}
 
-.divider {
-  width: 60px;
-  height: 1px;
-  background: var(--gold);
-  margin: 1.5rem auto;
+/* CTA band */
+.cta-band{
+  background:var(--green-deep);text-align:center;padding:8rem 2rem;
+  position:relative;overflow:hidden;
 }
-.divider-left {
-  width: 60px;
-  height: 1px;
-  background: var(--gold);
-  margin: 1.5rem 0;
+.cta-band::before{
+  content:'';position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:700px;height:700px;border-radius:50%;
+  background:radial-gradient(circle,rgba(184,150,12,.07) 0%,transparent 70%);
+  pointer-events:none;
 }
+.cta-band h2{color:var(--cream);max-width:660px;margin:0 auto .8rem}
+.cta-band p{color:rgba(245,240,230,.6);max-width:500px;margin:0 auto 2.4rem}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 
-/* ============================================================
-   ██╗  ██╗ ██████╗ ███╗   ███╗███████╗
-   ██║  ██║██╔═══██╗████╗ ████║██╔════╝
-   ███████║██║   ██║██╔████╔██║█████╗
-   ██╔══██║██║   ██║██║╚██╔╝██║██╔══╝
-   ██║  ██║╚██████╔╝██║ ╚═╝ ██║███████╗
-   ============================================================ */
+/* ─────────────────────────────────────────────
+   ██   ABOUT
+───────────────────────────────────────────── */
+.about-top{
+  padding-top:140px;background:var(--green-dark);padding-bottom:0;text-align:center;
+}
+.about-top-inner{max-width:680px;margin:0 auto;padding:0 2rem 5rem}
+.about-top h1{color:var(--cream);font-style:italic}
+.about-top p{color:rgba(245,240,230,.6);margin-top:1rem}
 
-/* HERO */
-.hero {
-  min-height: 100vh;
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  overflow: hidden;
-}
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=85');
-  background-size: cover;
-  background-position: center 30%;
-  transform: scale(1.05);
-  transition: transform 8s ease;
-}
-.hero-bg.loaded { transform: scale(1); }
-.hero-bg::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(26,33,24,0.2) 0%,
-    rgba(26,33,24,0.1) 30%,
-    rgba(26,33,24,0.55) 70%,
-    rgba(26,33,24,0.9) 100%
-  );
-}
+.about-banner{height:480px;overflow:hidden}
+.about-banner img{width:100%;height:100%;object-fit:cover;object-position:center 60%}
 
-/* Hero uses a better garden/waterfall image */
-#hero-bg-img {
-  background-image: url('https://images.unsplash.com/photo-1585320806297-9794b3e4aaae?w=1920&q=85');
+.about-story-sec{background:var(--cream)}
+.about-story-grid{
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;
 }
+.portrait{border-radius:24px;overflow:hidden;aspect-ratio:3/4;box-shadow:var(--shadow-lg)}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.story-text h2{margin-bottom:1.2rem}
+.story-text p{margin-bottom:1.1rem}
+.story-text p em{font-style:italic;color:var(--brown)}
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  padding: 0 2rem 7rem;
-  max-width: 1200px;
-  margin: 0 auto;
+.values-sec{background:var(--cream-mid)}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;max-width:1100px;margin:0 auto}
+.val{
+  padding:2.2rem;border-radius:20px;background:#fff;
+  box-shadow:var(--shadow-sm);text-align:center;
 }
-.hero-tag {
-  display: inline-block;
-  background: rgba(184,150,12,0.25);
-  border: 1px solid rgba(212,175,55,0.4);
-  color: var(--gold-light);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  padding: 0.4rem 1.2rem;
-  border-radius: 30px;
-  margin-bottom: 1.5rem;
-  backdrop-filter: blur(4px);
+.val-icon{
+  width:56px;height:56px;border-radius:50%;background:var(--cream-mid);
+  display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;
 }
-.hero h1 {
-  color: var(--white);
-  max-width: 820px;
-  margin-bottom: 1.5rem;
-  font-style: italic;
-}
-.hero h1 em { font-style: normal; color: var(--gold-light); }
-.hero-sub {
-  color: rgba(246,241,232,0.8);
-  font-size: 1.15rem;
-  max-width: 580px;
-  margin-bottom: 2.5rem;
-  font-weight: 300;
-}
-.hero-btns {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-.hero-scroll {
-  position: absolute;
-  bottom: 2.5rem;
-  right: 3rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  color: rgba(255,255,255,0.5);
-  font-size: 0.65rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  z-index: 2;
-}
-.scroll-line {
-  width: 1px;
-  height: 60px;
-  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.4));
-}
+.val-icon svg{width:26px;height:26px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.val h3{font-size:1.25rem;margin-bottom:.5rem}
+.val p{font-size:.9rem}
 
-/* INTRO BAND */
-.intro-band {
-  background: var(--deep-green);
-  padding: 5rem 2rem;
+/* ─────────────────────────────────────────────
+   ██   MEDITATION STATIONS
+───────────────────────────────────────────── */
+.med-hero{
+  padding-top:76px;min-height:72vh;position:relative;
+  display:flex;align-items:flex-end;overflow:hidden;
 }
-.intro-band-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6rem;
-  align-items: center;
+.med-hero-bg{
+  position:absolute;inset:0;
+  background:url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1920&q=85') center 55%/cover no-repeat;
 }
-.intro-band h2 { color: var(--cream); }
-.intro-band .eyebrow { color: var(--gold-light); }
-.intro-band p { color: rgba(246,241,232,0.7); }
-.intro-stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+.med-hero-bg::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(18,26,19,.22),rgba(18,26,19,.88));
 }
-.intro-stat {
-  border-left: 2px solid var(--gold);
-  padding-left: 1.2rem;
+.hero-inner{
+  position:relative;z-index:2;
+  max-width:1200px;margin:0 auto;padding:0 2.5rem 6rem;
 }
-.intro-stat-num {
-  font-family: var(--font-head);
-  font-size: 2.8rem;
-  font-weight: 300;
-  color: var(--gold-light);
-  line-height: 1;
-  margin-bottom: 0.3rem;
+.hero-inner h1{color:var(--cream);font-style:italic}
+.hero-inner p{color:rgba(245,240,230,.72);font-size:1.08rem;max-width:540px;margin-top:.8rem}
+
+.med-intro-sec{background:var(--cream)}
+.med-intro-grid{
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;
 }
-.intro-stat-label {
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(246,241,232,0.5);
+.round-img{border-radius:24px;overflow:hidden;aspect-ratio:1;box-shadow:var(--shadow-lg)}
+.round-img img{width:100%;height:100%;object-fit:cover}
+
+.features-sec{background:var(--cream-mid)}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;max-width:1100px;margin:3rem auto 0}
+.feat{
+  padding:1.8rem;border-radius:16px;background:#fff;
+  border:1.5px solid var(--border);transition:border-color .35s,box-shadow .35s;
+}
+.feat:hover{border-color:var(--gold);box-shadow:var(--shadow-md)}
+.feat-n{
+  font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;
+  color:var(--cream-dark);line-height:1;margin-bottom:.4rem;
+}
+.feat h4{color:var(--green-deep);margin-bottom:.4rem}
+.feat p{font-size:.88rem}
+
+.process-sec{background:var(--green-deep);padding:6rem 2rem}
+.process-sec h2{color:var(--cream);text-align:center;margin-bottom:3rem}
+.process-steps{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;
+  max-width:1100px;margin:0 auto;position:relative;
+}
+.process-steps::before{
+  content:'';position:absolute;top:28px;
+  left:calc(12.5% + 18px);right:calc(12.5% + 18px);
+  height:1px;background:rgba(212,175,55,.25);
+}
+.step{text-align:center;position:relative}
+.step-n{
+  width:56px;height:56px;border-radius:50%;background:var(--gold);
+  color:#fff;font-family:'Cormorant Garamond',serif;font-size:1.5rem;
+  display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;
+}
+.step h4{color:var(--cream);margin-bottom:.4rem}
+.step p{font-size:.88rem;color:rgba(245,240,230,.5)}
+
+/* ─────────────────────────────────────────────
+   ██   OUTDOOR RETREATS
+───────────────────────────────────────────── */
+.ret-hero{
+  padding-top:76px;min-height:75vh;position:relative;
+  display:flex;align-items:flex-end;overflow:hidden;
+}
+.ret-hero-bg{
+  position:absolute;inset:0;
+  background:url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&q=85') center 50%/cover no-repeat;
+}
+.ret-hero-bg::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(18,26,19,.2),rgba(18,26,19,.88));
 }
 
-/* SIGNATURE SPACES */
-.spaces-section { background: var(--light); }
-.spaces-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+.offerings-sec{background:var(--cream)}
+.offerings-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:2rem;
+  max-width:1100px;margin:3rem auto 0;
 }
-.space-card {
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: 0 4px 24px var(--shadow);
-  transition: transform var(--transition), box-shadow var(--transition);
-  cursor: pointer;
+.offering{
+  background:#fff;border-radius:20px;overflow:hidden;
+  box-shadow:var(--shadow-sm);transition:transform .4s var(--ease);
 }
-.space-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 16px 50px var(--shadow);
-}
-.space-card-img {
-  height: 240px;
-  overflow: hidden;
-}
-.space-card-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.8s ease;
-}
-.space-card:hover .space-card-img img { transform: scale(1.08); }
-.space-card-body { padding: 1.8rem; }
-.space-card-icon {
-  width: 44px;
-  height: 44px;
-  background: var(--cream2);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-.space-card-icon svg { width: 22px; height: 22px; color: var(--gold); }
-.space-card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 0.6rem;
-  color: var(--deep-green);
-}
-.space-card p { font-size: 0.95rem; }
-
-/* PHILOSOPHY SECTION */
-.philosophy {
-  background: var(--cream);
-  position: relative;
-  overflow: hidden;
-}
-.philosophy::before {
-  content: '';
-  position: absolute;
-  top: -100px; right: -100px;
-  width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(184,150,12,0.06) 0%, transparent 70%);
-  pointer-events: none;
-}
-.philosophy-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6rem;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.philosophy-img-wrap {
-  position: relative;
-}
-.philosophy-img {
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  aspect-ratio: 4/5;
-}
-.philosophy-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.philosophy-badge {
-  position: absolute;
-  bottom: -1.5rem;
-  right: -1.5rem;
-  background: var(--deep-green);
-  color: var(--cream);
-  padding: 2rem;
-  border-radius: var(--radius-lg);
-  text-align: center;
-  min-width: 160px;
-  box-shadow: 0 8px 30px var(--shadow);
-}
-.philosophy-badge-num {
-  font-family: var(--font-head);
-  font-size: 3rem;
-  font-weight: 300;
-  color: var(--gold-light);
-  line-height: 1;
-}
-.philosophy-badge-text {
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--stone);
-  margin-top: 0.3rem;
-}
-.philosophy-list {
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-.philosophy-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.8rem;
-  font-size: 0.95rem;
-  color: var(--mid);
-  font-weight: 300;
-}
-.philosophy-list li::before {
-  content: '';
-  display: block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--gold);
-  margin-top: 0.6rem;
-  flex-shrink: 0;
+.offering:hover{transform:translateY(-6px)}
+.off-img{height:250px;overflow:hidden}
+.off-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.offering:hover .off-img img{transform:scale(1.06)}
+.off-body{padding:1.8rem}
+.off-body h3{margin-bottom:.6rem}
+.off-body p{font-size:.93rem;margin-bottom:1rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.tag{
+  font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  padding:.28rem .85rem;background:var(--cream-mid);color:var(--brown);border-radius:20px;
 }
 
-/* GALLERY PREVIEW */
-.gallery-preview { background: var(--deep-green); }
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 280px);
-  gap: 1rem;
-  margin-top: 3rem;
+.showcase-sec{background:var(--cream-mid)}
+.showcase-grid{
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;
 }
-.gallery-item {
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  position: relative;
-}
-.gallery-item:first-child {
-  grid-row: 1 / 3;
-  grid-column: 1 / 2;
-}
-.gallery-item:nth-child(4) {
-  grid-row: 1 / 3;
-  grid-column: 4 / 5;
-}
-.gallery-item img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  transition: transform 0.8s ease;
-}
-.gallery-item:hover img { transform: scale(1.08); }
-.gallery-item::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(26,33,24,0.4) 0%, transparent 60%);
-  opacity: 0;
-  transition: opacity var(--transition);
-}
-.gallery-item:hover::after { opacity: 1; }
-.gallery-preview .section-header h2 { color: var(--cream); }
-.gallery-preview .section-header p { color: rgba(246,241,232,0.6); }
-.gallery-preview .eyebrow { color: var(--gold-light); }
-
-/* TESTIMONIAL */
-.testimonial-section { background: var(--cream2); }
-.testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-top: 3rem;
-}
-.testimonial-card {
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  padding: 2.5rem;
-  box-shadow: 0 4px 20px var(--shadow);
-  position: relative;
-}
-.testimonial-card::before {
-  content: '\201C';
-  position: absolute;
-  top: 1.5rem; left: 2rem;
-  font-family: var(--font-head);
-  font-size: 5rem;
-  color: var(--cream3);
-  line-height: 1;
-}
-.testimonial-text {
-  font-family: var(--font-head);
-  font-size: 1.1rem;
-  color: var(--deep-green);
-  font-style: italic;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  position: relative;
-  z-index: 1;
-}
-.testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-}
-.testimonial-avatar {
-  width: 44px; height: 44px;
-  border-radius: 50%;
-  background: var(--cream3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-head);
-  font-size: 1.2rem;
-  color: var(--brown);
-  flex-shrink: 0;
-}
-.testimonial-name {
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: var(--deep-green);
-}
-.testimonial-loc { font-size: 0.8rem; color: var(--mid); }
-.stars { color: var(--gold); letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 0.5rem; }
-
-/* FINAL CTA */
-.final-cta {
-  background: var(--deep-green);
-  text-align: center;
-  padding: 8rem 2rem;
-  position: relative;
-  overflow: hidden;
-}
-.final-cta::before {
-  content: '';
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: 800px; height: 800px;
-  background: radial-gradient(circle, rgba(184,150,12,0.08) 0%, transparent 70%);
-  pointer-events: none;
-}
-.final-cta h2 { color: var(--cream); max-width: 700px; margin: 0 auto 1rem; }
-.final-cta p { color: rgba(246,241,232,0.65); max-width: 520px; margin: 0 auto 2.5rem; }
-.final-cta .eyebrow { color: var(--gold-light); }
-.final-cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-
-/* ============================================================
-   ABOUT PAGE
-   ============================================================ */
-.about-hero {
-  padding-top: 140px;
-  background: var(--deep-green);
-  padding-bottom: 0;
-  text-align: center;
-}
-.about-hero-inner { max-width: 700px; margin: 0 auto; padding: 0 2rem 5rem; }
-.about-hero h1 { color: var(--cream); font-style: italic; }
-.about-hero p { color: rgba(246,241,232,0.65); margin-top: 1rem; }
-.about-hero .eyebrow { color: var(--gold-light); }
-
-.about-image-full {
-  height: 500px;
-  overflow: hidden;
-}
-.about-image-full img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
-
-.about-story { background: var(--light); }
-.about-story-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6rem;
-  align-items: start;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.about-story-text h2 { color: var(--deep-green); margin-bottom: 1.5rem; }
-.about-story-text p { margin-bottom: 1.2rem; }
-.about-story-text p:last-child { margin-bottom: 0; }
-.about-portrait {
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  aspect-ratio: 3/4;
-  box-shadow: 0 20px 60px var(--shadow);
-}
-.about-portrait img { width: 100%; height: 100%; object-fit: cover; }
-
-.about-values { background: var(--cream); }
-.about-values h2 { text-align: center; margin-bottom: 3rem; }
-.values-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-.value-card {
-  padding: 2.5rem;
-  border-radius: var(--radius-lg);
-  background: var(--white);
-  box-shadow: 0 4px 20px var(--shadow);
-  text-align: center;
-}
-.value-icon {
-  width: 60px; height: 60px;
-  background: var(--cream2);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.2rem;
-}
-.value-icon svg { width: 28px; height: 28px; color: var(--gold); }
-.value-card h3 { font-size: 1.3rem; margin-bottom: 0.7rem; color: var(--deep-green); }
-.value-card p { font-size: 0.9rem; }
-
-/* ============================================================
-   MEDITATION STATIONS PAGE
-   ============================================================ */
-.med-hero {
-  padding-top: 140px;
-  min-height: 70vh;
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  overflow: hidden;
-}
-.med-hero-bg {
-  position: absolute;
-  inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=85');
-  background-size: cover;
-  background-position: center;
-}
-.med-hero-bg::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(26,33,24,0.3), rgba(26,33,24,0.85));
-}
-.med-hero-content {
-  position: relative; z-index: 2;
-  max-width: 1200px; margin: 0 auto;
-  padding: 0 2rem 6rem;
-}
-.med-hero h1 { color: var(--cream); font-style: italic; }
-.med-hero p { color: rgba(246,241,232,0.75); font-size: 1.1rem; max-width: 560px; margin-top: 1rem; }
-.med-hero .eyebrow { color: var(--gold-light); }
-
-.med-intro { background: var(--light); }
-.med-intro-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.med-intro h2 { color: var(--deep-green); margin-bottom: 1.2rem; }
-.med-intro p { margin-bottom: 1rem; }
-.med-img-round {
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  aspect-ratio: 1;
-  box-shadow: 0 16px 50px var(--shadow);
-}
-.med-img-round img { width: 100%; height: 100%; object-fit: cover; }
-
-.features-section { background: var(--cream); }
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-top: 3rem;
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.feature-item {
-  padding: 2rem;
-  border-radius: var(--radius-lg);
-  background: var(--white);
-  border: 1px solid var(--border);
-  transition: border-color var(--transition), box-shadow var(--transition);
-}
-.feature-item:hover {
-  border-color: var(--gold);
-  box-shadow: 0 8px 30px var(--shadow);
-}
-.feature-num {
-  font-family: var(--font-head);
-  font-size: 3rem;
-  font-weight: 300;
-  color: var(--cream3);
-  line-height: 1;
-  margin-bottom: 0.5rem;
-}
-.feature-item h4 { color: var(--deep-green); margin-bottom: 0.5rem; }
-.feature-item p { font-size: 0.9rem; }
-
-.process-section { background: var(--deep-green); }
-.process-section h2 { color: var(--cream); text-align: center; margin-bottom: 3rem; }
-.process-section .eyebrow { text-align: center; color: var(--gold-light); }
-.process-steps {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  max-width: 1100px;
-  margin: 0 auto;
-  position: relative;
-}
-.process-steps::before {
-  content: '';
-  position: absolute;
-  top: 30px;
-  left: calc(12.5% + 20px);
-  right: calc(12.5% + 20px);
-  height: 1px;
-  background: rgba(184,150,12,0.3);
-}
-.process-step { text-align: center; position: relative; }
-.step-num {
-  width: 60px; height: 60px;
-  border-radius: 50%;
-  background: var(--gold);
-  color: var(--white);
-  font-family: var(--font-head);
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.2rem;
-}
-.process-step h4 { color: var(--cream); margin-bottom: 0.5rem; }
-.process-step p { color: rgba(246,241,232,0.55); font-size: 0.9rem; }
-
-/* ============================================================
-   OUTDOOR RETREATS PAGE
-   ============================================================ */
-.retreats-hero {
-  padding-top: 140px;
-  min-height: 75vh;
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-}
-.retreats-hero-bg {
-  position: absolute;
-  inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1920&q=85');
-  background-size: cover;
-  background-position: center 60%;
-}
-.retreats-hero-bg::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(26,33,24,0.25), rgba(26,33,24,0.88));
-}
-.retreats-hero-content {
-  position: relative; z-index: 2;
-  max-width: 1200px; margin: 0 auto;
-  padding: 0 2rem 6rem;
-}
-.retreats-hero h1 { color: var(--cream); font-style: italic; }
-.retreats-hero p { color: rgba(246,241,232,0.75); max-width: 560px; margin-top: 1rem; font-size: 1.1rem; }
-.retreats-hero .eyebrow { color: var(--gold-light); }
-
-.retreats-offerings { background: var(--light); }
-.offerings-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  max-width: 1100px;
-  margin: 3rem auto 0;
-}
-.offering-card {
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: 0 4px 24px var(--shadow);
-  transition: transform var(--transition);
-}
-.offering-card:hover { transform: translateY(-6px); }
-.offering-img {
-  height: 260px;
-  overflow: hidden;
-}
-.offering-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s; }
-.offering-card:hover .offering-img img { transform: scale(1.06); }
-.offering-body { padding: 2rem; }
-.offering-body h3 { margin-bottom: 0.8rem; color: var(--deep-green); }
-.offering-body p { font-size: 0.95rem; margin-bottom: 1rem; }
-.offering-tags {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-.offering-tag {
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 0.3rem 0.9rem;
-  background: var(--cream2);
-  color: var(--brown);
-  border-radius: 20px;
+.showcase-img{border-radius:24px;overflow:hidden;aspect-ratio:4/5;box-shadow:var(--shadow-lg)}
+.showcase-img img{width:100%;height:100%;object-fit:cover}
+.showcase-text h2{margin-bottom:1rem}
+.showcase-text p{margin-bottom:1rem}
+.feat-list{margin-top:1.4rem;display:flex;flex-direction:column;gap:.75rem}
+.feat-list li{display:flex;align-items:center;gap:.75rem;font-size:.95rem;color:var(--text-light);font-weight:300}
+.chk{
+  width:20px;height:20px;border-radius:50%;background:var(--green-deep);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  color:var(--gold-light);font-size:.65rem;line-height:1;
 }
 
-.retreat-showcase { background: var(--cream); }
-.showcase-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6rem;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
+/* ─────────────────────────────────────────────
+   ██   GALLERY
+───────────────────────────────────────────── */
+.gal-top{padding-top:140px;background:var(--green-dark);padding-bottom:5rem;text-align:center}
+.gal-top h1{color:var(--cream);font-style:italic}
+.gal-top p{color:rgba(245,240,230,.55);margin-top:1rem}
+
+.gal-full{background:var(--cream);padding:5rem 2rem}
+.cat-bar{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem}
+.cat{
+  padding:.55rem 1.4rem;border-radius:30px;
+  font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  border:2px solid var(--border);color:var(--text-light);background:transparent;
+  cursor:pointer;transition:all .3s;
 }
-.showcase-img {
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  aspect-ratio: 4/5;
-  box-shadow: 0 20px 60px var(--shadow);
+.cat.on,.cat:hover{background:var(--green-deep);border-color:var(--green-deep);color:#fff}
+.masonry{columns:3;column-gap:1.1rem;max-width:1200px;margin:0 auto}
+.m-item{break-inside:avoid;margin-bottom:1.1rem;border-radius:12px;overflow:hidden;position:relative;cursor:pointer}
+.m-item img{width:100%;display:block;transition:transform .7s var(--ease)}
+.m-item:hover img{transform:scale(1.04)}
+.m-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(18,26,19,.6),transparent 50%);
+  opacity:0;transition:opacity .4s;
+  display:flex;align-items:flex-end;padding:1rem;
 }
-.showcase-img img { width: 100%; height: 100%; object-fit: cover; }
-.showcase-text h2 { margin-bottom: 1.2rem; }
-.showcase-text p { margin-bottom: 1rem; }
-.showcase-list {
-  margin-top: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
+.m-item:hover .m-overlay{opacity:1}
+.m-label{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--cream)}
+
+/* ─────────────────────────────────────────────
+   ██   CONTACT
+───────────────────────────────────────────── */
+.con-top{padding-top:140px;background:var(--green-dark);padding-bottom:5rem;text-align:center}
+.con-top h1{color:var(--cream);font-style:italic}
+.con-top p{color:rgba(245,240,230,.55);margin-top:1rem}
+
+.con-sec{background:var(--cream);padding:6rem 2rem}
+.con-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:5rem;max-width:1100px;margin:0 auto}
+.con-info h2{margin-bottom:.8rem}
+.con-info p{margin-bottom:1.8rem}
+.con-details{display:flex;flex-direction:column;gap:1.4rem;margin-top:1.8rem}
+.con-row{display:flex;gap:.9rem;align-items:flex-start}
+.con-icon{
+  width:42px;height:42px;border-radius:50%;background:var(--cream-mid);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
 }
-.showcase-list li {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  font-size: 0.95rem;
-  color: var(--mid);
-  font-weight: 300;
-}
-.check-icon {
-  width: 20px; height: 20px;
-  background: var(--deep-green);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  color: var(--gold-light);
-  font-size: 0.7rem;
+.con-icon svg{width:19px;height:19px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.con-lbl{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);margin-bottom:.15rem}
+.con-val{font-size:.98rem;color:var(--green-deep);font-weight:500}
+.con-note{
+  margin-top:2.2rem;padding:1.8rem;background:var(--cream-mid);border-radius:14px;
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:1.05rem;color:var(--brown);line-height:1.7;
 }
 
-/* ============================================================
-   GALLERY PAGE
-   ============================================================ */
-.gallery-hero {
-  padding-top: 140px;
-  background: var(--deep-green);
-  text-align: center;
-  padding-bottom: 5rem;
+.con-form{background:#fff;border-radius:24px;padding:2.8rem;box-shadow:var(--shadow-md)}
+.con-form h3{margin-bottom:.4rem}
+.con-form > p{margin-bottom:2rem;font-size:.93rem}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.f-group{display:flex;flex-direction:column;gap:.38rem;margin-bottom:1.1rem}
+.f-group label{font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--brown)}
+.f-group input,.f-group select,.f-group textarea{
+  padding:.82rem 1.1rem;border:1.5px solid var(--border);border-radius:10px;
+  background:var(--cream);font-size:.95rem;color:var(--ink);
+  transition:border-color .3s,background .3s;outline:none;width:100%;
 }
-.gallery-hero h1 { color: var(--cream); font-style: italic; }
-.gallery-hero p { color: rgba(246,241,232,0.6); margin-top: 1rem; }
-.gallery-hero .eyebrow { color: var(--gold-light); }
+.f-group input:focus,.f-group select:focus,.f-group textarea:focus{
+  border-color:var(--gold);background:#fff;
+}
+.f-group textarea{min-height:110px;resize:vertical}
+.f-submit{width:100%;padding:1.05rem;margin-top:.4rem;font-size:.82rem;border-radius:10px}
+.f-note{font-size:.78rem;color:var(--text-light);text-align:center;margin-top:.9rem}
 
-.gallery-full { background: var(--light); padding: 5rem 2rem; }
-.gallery-categories {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 3rem;
-}
-.cat-btn {
-  padding: 0.6rem 1.5rem;
-  border-radius: 30px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  border: 2px solid var(--border);
-  color: var(--mid);
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-.cat-btn.active, .cat-btn:hover {
-  background: var(--deep-green);
-  border-color: var(--deep-green);
-  color: var(--white);
-}
-.masonry {
-  columns: 3;
-  column-gap: 1.2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.masonry-item {
-  break-inside: avoid;
-  margin-bottom: 1.2rem;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  position: relative;
-}
-.masonry-item img { width: 100%; display: block; transition: transform 0.8s; }
-.masonry-item:hover img { transform: scale(1.04); }
-.masonry-item-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(26,33,24,0.6), transparent);
-  opacity: 0;
-  transition: opacity var(--transition);
-  display: flex;
-  align-items: flex-end;
-  padding: 1.2rem;
-}
-.masonry-item:hover .masonry-item-overlay { opacity: 1; }
-.masonry-item-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--cream);
-}
-
-/* ============================================================
-   CONTACT PAGE
-   ============================================================ */
-.contact-hero {
-  padding-top: 140px;
-  background: var(--deep-green);
-  text-align: center;
-  padding-bottom: 5rem;
-}
-.contact-hero h1 { color: var(--cream); font-style: italic; }
-.contact-hero p { color: rgba(246,241,232,0.6); margin-top: 1rem; }
-.contact-hero .eyebrow { color: var(--gold-light); }
-
-.contact-section { background: var(--light); padding: 6rem 2rem; }
-.contact-inner {
-  display: grid;
-  grid-template-columns: 1fr 1.6fr;
-  gap: 5rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-.contact-info h2 { margin-bottom: 1rem; }
-.contact-info p { margin-bottom: 2rem; }
-.contact-details { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem; }
-.contact-detail-item {
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
-}
-.contact-detail-icon {
-  width: 44px; height: 44px;
-  background: var(--cream2);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.contact-detail-icon svg { width: 20px; height: 20px; color: var(--gold); }
-.contact-detail-label { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); margin-bottom: 0.2rem; }
-.contact-detail-value { font-size: 1rem; color: var(--deep-green); font-weight: 500; }
-
-.contact-form {
-  background: var(--white);
-  border-radius: var(--radius-xl);
-  padding: 3rem;
-  box-shadow: 0 8px 40px var(--shadow);
-}
-.contact-form h3 { margin-bottom: 0.5rem; }
-.contact-form > p { margin-bottom: 2rem; font-size: 0.95rem; }
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  margin-bottom: 1.2rem;
-}
-.form-group label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--brown);
-}
-.form-group input,
-.form-group select,
-.form-group textarea {
-  padding: 0.9rem 1.2rem;
-  border: 1.5px solid var(--border);
-  border-radius: var(--radius-md);
-  background: var(--cream);
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  color: var(--ink);
-  transition: border-color 0.3s;
-  outline: none;
-  width: 100%;
-}
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  border-color: var(--gold);
-  background: var(--white);
-}
-.form-group textarea { min-height: 120px; resize: vertical; }
-.form-submit { width: 100%; padding: 1.1rem; margin-top: 0.5rem; font-size: 0.85rem; }
-.form-note { font-size: 0.8rem; color: var(--mid); text-align: center; margin-top: 1rem; }
-
-/* ============================================================
+/* ─────────────────────────────────────────────
    FOOTER
-   ============================================================ */
-footer {
-  background: var(--ink);
-  color: var(--cream);
-  padding: 5rem 2rem 2.5rem;
+───────────────────────────────────────────── */
+footer{background:var(--ink);color:var(--cream);padding:5rem 2rem 2rem}
+.foot-inner{max-width:1200px;margin:0 auto}
+.foot-top{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;
+  padding-bottom:3rem;border-bottom:1px solid rgba(245,240,230,.08);
 }
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
+.foot-brand-name{
+  font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:500;
+  color:var(--cream);margin-bottom:.8rem;
 }
-.footer-top {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 3rem;
-  padding-bottom: 3rem;
-  border-bottom: 1px solid rgba(246,241,232,0.1);
+.foot-brand p{font-size:.88rem;color:rgba(245,240,230,.4);line-height:1.75}
+.foot-col h5{
+  font-size:.67rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold-light);margin-bottom:1.1rem;
 }
-.footer-brand .nav-brand-name { font-size: 1.3rem; }
-.footer-brand p {
-  color: rgba(246,241,232,0.45);
-  font-size: 0.9rem;
-  margin-top: 0.8rem;
-  line-height: 1.7;
-}
-.footer-col h5 {
-  font-family: var(--font-body);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--gold-light);
-  margin-bottom: 1.2rem;
-}
-.footer-col ul { display: flex; flex-direction: column; gap: 0.6rem; }
-.footer-col ul li a, .footer-col ul li span {
-  font-size: 0.9rem;
-  color: rgba(246,241,232,0.5);
-  transition: color 0.3s;
-  cursor: pointer;
-}
-.footer-col ul li a:hover { color: var(--cream); }
-.footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 2rem;
-  font-size: 0.8rem;
-  color: rgba(246,241,232,0.3);
+.foot-col ul{display:flex;flex-direction:column;gap:.55rem}
+.foot-col li a,.foot-col li span{font-size:.88rem;color:rgba(245,240,230,.45);transition:color .3s;cursor:pointer}
+.foot-col li a:hover{color:var(--cream)}
+.foot-bottom{
+  display:flex;justify-content:space-between;align-items:center;
+  padding-top:1.8rem;font-size:.76rem;color:rgba(245,240,230,.28);
 }
 
-/* ============================================================
+/* ─────────────────────────────────────────────
    RESPONSIVE
-   ============================================================ */
-@media (max-width: 1024px) {
-  .spaces-grid { grid-template-columns: 1fr 1fr; }
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-  }
-  .gallery-item:first-child, .gallery-item:nth-child(4) {
-    grid-row: auto;
-    grid-column: auto;
-  }
-  .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
-  .process-steps { grid-template-columns: repeat(2, 1fr); }
-  .process-steps::before { display: none; }
-  .values-grid { grid-template-columns: 1fr 1fr; }
+───────────────────────────────────────────── */
+@media(max-width:1024px){
+  .cards-grid{grid-template-columns:1fr 1fr}
+  .gal-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .gal-item:first-child{grid-row:auto}
+  .values-grid{grid-template-columns:1fr 1fr}
+  .process-steps{grid-template-columns:1fr 1fr}
+  .process-steps::before{display:none}
+  .foot-top{grid-template-columns:1fr 1fr;gap:2rem}
+  .masonry{columns:2}
 }
-
-@media (max-width: 768px) {
-  h1 { font-size: 2.4rem; }
-  h2 { font-size: 1.9rem; }
-  .section { padding: 5rem 1.5rem; }
-  .section-sm { padding: 3.5rem 1.5rem; }
-
-  .nav-links { display: none; }
-  .nav-hamburger { display: flex; }
-
-  .hero-content { padding: 0 1.5rem 5rem; }
-  .intro-band-inner { grid-template-columns: 1fr; gap: 3rem; }
-  .spaces-grid { grid-template-columns: 1fr; }
-  .philosophy-inner { grid-template-columns: 1fr; gap: 3rem; }
-  .philosophy-badge { bottom: 1rem; right: 1rem; }
-  .gallery-grid { grid-template-columns: 1fr 1fr; }
-  .testimonial-grid { grid-template-columns: 1fr; }
-  .about-story-inner { grid-template-columns: 1fr; gap: 3rem; }
-  .values-grid { grid-template-columns: 1fr; }
-  .med-intro-inner { grid-template-columns: 1fr; gap: 3rem; }
-  .features-grid { grid-template-columns: 1fr; }
-  .process-steps { grid-template-columns: 1fr 1fr; }
-  .offerings-grid { grid-template-columns: 1fr; }
-  .showcase-inner { grid-template-columns: 1fr; gap: 3rem; }
-  .masonry { columns: 2; }
-  .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
-  .form-row { grid-template-columns: 1fr; }
-  .contact-form { padding: 2rem; }
-  .footer-top { grid-template-columns: 1fr; gap: 2rem; }
-  .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
-  .hero-scroll { display: none; }
-  .intro-stats { grid-template-columns: 1fr 1fr; }
+@media(max-width:768px){
+  h1{font-size:2.4rem}h2{font-size:1.9rem}
+  .sec{padding:5rem 1.5rem}.sec-sm{padding:3.5rem 1.5rem}
+  .nav-links{display:none}
+  .nav-burger{display:flex}
+  .hero-content{padding:0 1.5rem 5rem}
+  .hero-scroll-hint{display:none}
+  .intro-band-grid{grid-template-columns:1fr;gap:3rem}
+  .intro-stats{grid-template-columns:1fr 1fr}
+  .cards-grid{grid-template-columns:1fr}
+  .phil-inner{grid-template-columns:1fr;gap:3rem}
+  .phil-badge{bottom:.8rem;right:.8rem}
+  .gal-grid{grid-template-columns:1fr 1fr}
+  .testi-grid{grid-template-columns:1fr}
+  .about-story-grid{grid-template-columns:1fr;gap:3rem}
+  .values-grid{grid-template-columns:1fr}
+  .med-intro-grid{grid-template-columns:1fr;gap:3rem}
+  .features-grid{grid-template-columns:1fr}
+  .process-steps{grid-template-columns:1fr 1fr}
+  .offerings-grid{grid-template-columns:1fr}
+  .showcase-grid{grid-template-columns:1fr;gap:3rem}
+  .con-grid{grid-template-columns:1fr;gap:3rem}
+  .f-row{grid-template-columns:1fr}
+  .con-form{padding:1.8rem}
+  .foot-top{grid-template-columns:1fr;gap:2rem}
+  .foot-bottom{flex-direction:column;gap:.5rem;text-align:center}
+  .hero-btns{flex-direction:column;align-items:flex-start}
+  .cta-btns{flex-direction:column;align-items:center}
 }
-
-@media (max-width: 480px) {
-  h1 { font-size: 2rem; }
-  .masonry { columns: 1; }
-  .gallery-grid { grid-template-columns: 1fr; }
-  .hero-btns { flex-direction: column; align-items: flex-start; }
-  .final-cta-btns { flex-direction: column; align-items: center; }
+@media(max-width:480px){
+  h1{font-size:2rem}
+  .masonry{columns:1}
+  .gal-grid{grid-template-columns:1fr}
+  .process-steps{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
-<!-- SVG SPRITE -->
-<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
-  <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/>
-    <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
-  </symbol>
-  <symbol id="i-water" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M12 2C6.48 2 4 7.5 4 10c0 4.42 3.58 8 8 8s8-3.58 8-8c0-2.5-2.48-8-8-8z"/>
-  </symbol>
-  <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-  </symbol>
-  <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
-    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-    <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
-    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-  </symbol>
-  <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-  </symbol>
-  <symbol id="i-stone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
-  </symbol>
-  <symbol id="i-path" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M3 17c3 0 4.5-3 7.5-3S14 17 17 17s4.5-3 7.5-3"/><path d="M3 7c3 0 4.5 3 7.5 3S14 7 17 7s4.5 3 7.5 3"/>
-  </symbol>
-  <symbol id="i-flower" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="12" cy="12" r="3"/>
-    <path d="M12 2a3 3 0 0 1 3 3v1a3 3 0 0 1-6 0V5a3 3 0 0 1 3-3z"/>
-    <path d="M12 22a3 3 0 0 1-3-3v-1a3 3 0 0 1 6 0v1a3 3 0 0 1-3 3z"/>
-    <path d="M2 12a3 3 0 0 1 3-3h1a3 3 0 0 1 0 6H5a3 3 0 0 1-3-3z"/>
-    <path d="M22 12a3 3 0 0 1-3 3h-1a3 3 0 0 1 0-6h1a3 3 0 0 1 3 3z"/>
-  </symbol>
-  <symbol id="i-yoga" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="12" cy="4" r="1.5"/><path d="M8 9.5c0 0 1.5 1.5 4 1.5s4-1.5 4-1.5"/>
-    <path d="M12 11v4"/><path d="M9 15l-2 4"/><path d="M15 15l2 4"/><path d="M8 12l-3 1.5"/><path d="M16 12l3 1.5"/>
-  </symbol>
-  <symbol id="i-wind" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/>
-  </symbol>
-  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.09a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-  </symbol>
-  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
-  </symbol>
-  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
-  </symbol>
-  <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-  </symbol>
-</svg>
-
-<!-- NAVIGATION -->
-<nav id="navbar">
-  <div class="nav-logo" onclick="navigate('home')">
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-logo" onclick="go('home')">
     <div class="nav-logo-mark">
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 21C12 21 4 14 4 8.5a8 8 0 0 1 8-7 8 8 0 0 1 8 7C20 14 12 21 12 21z" fill="white" opacity="0.9"/>
-        <path d="M12 8c0 2-1.5 4-1.5 4S9 8.5 9 7a3 3 0 0 1 6 0c0 1.5-1.5 5-1.5 5S12 10 12 8z" fill="#b8960c"/>
+        <path d="M12 20s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z" fill="white" opacity=".9"/>
+        <circle cx="12" cy="9" r="2.5" fill="#b8960c"/>
       </svg>
     </div>
-    <div class="nav-brand">
-      <span class="nav-brand-name">Love Through Landscape</span>
-      <span class="nav-brand-tag">Luxury Outdoor Wellness</span>
+    <div>
+      <div class="nav-name">Love Through Landscape</div>
+      <div class="nav-sub">Luxury Outdoor Wellness</div>
     </div>
   </div>
   <div class="nav-links">
-    <a onclick="navigate('home')" data-page="home">Home</a>
-    <a onclick="navigate('about')" data-page="about">About</a>
-    <a onclick="navigate('meditation')" data-page="meditation">Meditation Stations</a>
-    <a onclick="navigate('retreats')" data-page="retreats">Outdoor Retreats</a>
-    <a onclick="navigate('gallery')" data-page="gallery">Gallery</a>
-    <a onclick="navigate('contact')" class="nav-cta" data-page="contact">Request Consultation</a>
+    <a data-p="home"       onclick="go('home')">Home</a>
+    <a data-p="about"      onclick="go('about')">About</a>
+    <a data-p="meditation" onclick="go('meditation')">Meditation Stations</a>
+    <a data-p="retreats"   onclick="go('retreats')">Outdoor Retreats</a>
+    <a data-p="gallery"    onclick="go('gallery')">Gallery</a>
+    <a data-p="contact"    onclick="go('contact')" class="nav-cta-btn">Consultation</a>
   </div>
-  <button class="nav-hamburger" onclick="openMobileNav()" aria-label="Menu">
+  <button class="nav-burger" onclick="openMob()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
-
-<!-- MOBILE NAV -->
-<div class="mobile-nav" id="mobileNav">
-  <button class="mobile-nav-close" onclick="closeMobileNav()">&times;</button>
-  <a onclick="navigate('home'); closeMobileNav()">Home</a>
-  <a onclick="navigate('about'); closeMobileNav()">About</a>
-  <a onclick="navigate('meditation'); closeMobileNav()">Meditation Stations</a>
-  <a onclick="navigate('retreats'); closeMobileNav()">Outdoor Retreats</a>
-  <a onclick="navigate('gallery'); closeMobileNav()">Gallery</a>
-  <a onclick="navigate('contact'); closeMobileNav()">Consultation</a>
+<div class="mob-nav" id="mob">
+  <button class="mob-close" onclick="closeMob()">×</button>
+  <a onclick="go('home');closeMob()">Home</a>
+  <a onclick="go('about');closeMob()">About</a>
+  <a onclick="go('meditation');closeMob()">Meditation Stations</a>
+  <a onclick="go('retreats');closeMob()">Outdoor Retreats</a>
+  <a onclick="go('gallery');closeMob()">Gallery</a>
+  <a onclick="go('contact');closeMob()">Consultation</a>
 </div>
 
-<!-- ============================================================
-     HOME PAGE
-     ============================================================ -->
-<div class="page active" id="page-home">
+<!-- ══════════════════════════════════════════
+     HOME
+══════════════════════════════════════════ -->
+<div class="page active" id="p-home">
 
-  <!-- HERO -->
   <section class="hero">
-    <div class="hero-bg" id="hero-bg-img"></div>
+    <div class="hero-bg"></div>
     <div class="hero-content">
-      <div class="hero-tag">Private Outdoor Sanctuaries</div>
-      <h1>Turn Your Backyard Into a <em>Place of Peace</em></h1>
-      <p class="hero-sub">Love Through Landscape designs custom outdoor meditation stations, waterfalls, patios, and private garden retreats for homeowners who want more than just landscaping.</p>
+      <div class="hero-badge">Private Outdoor Sanctuaries</div>
+      <h1>Turn Your Backyard Into<br>a <em>Place of Peace</em></h1>
+      <p class="hero-desc">Love Through Landscape designs custom outdoor meditation stations, waterfalls, patios, and private garden retreats for homeowners who want more than just landscaping.</p>
       <div class="hero-btns">
-        <button class="btn btn-primary" onclick="navigate('contact')">Request a Consultation</button>
-        <button class="btn btn-outline" onclick="navigate('meditation')">Explore Meditation Stations</button>
+        <button class="btn btn-gold" onclick="go('contact')">Request a Consultation</button>
+        <button class="btn btn-ghost" onclick="go('meditation')">Explore Meditation Stations</button>
       </div>
     </div>
-    <div class="hero-scroll">
-      <div class="scroll-line"></div>
+    <div class="hero-scroll-hint">
+      <div class="scroll-bar"></div>
       <span>Scroll</span>
     </div>
   </section>
 
-  <!-- INTRO BAND -->
-  <section class="intro-band">
-    <div class="intro-band-inner">
-      <div class="reveal">
+  <!-- Intro -->
+  <div class="intro-band">
+    <div class="intro-band-grid">
+      <div class="anim">
         <span class="eyebrow">Landscaping With Meaning</span>
         <h2>Your Outdoor Space Should Feel Like a Sanctuary</h2>
-        <p style="margin-top:1.2rem;margin-bottom:1.5rem;">We don't simply plant and pave. We listen, design, and build spaces that feel like an extension of who you are — peaceful places for reflection, connection, and stillness, crafted with thirty years of expertise and genuine care.</p>
-        <button class="btn btn-outline" onclick="navigate('about')">Our Story</button>
+        <p>We don't simply plant and pave. We listen, design, and build spaces that feel like an extension of who you are — peaceful places for reflection, connection, and stillness.</p>
+        <button class="btn btn-ghost" onclick="go('about')" style="margin-top:.5rem">Our Story</button>
       </div>
-      <div class="intro-stats reveal d2">
-        <div class="intro-stat">
-          <div class="intro-stat-num">30+</div>
-          <div class="intro-stat-label">Years of craft</div>
-        </div>
-        <div class="intro-stat">
-          <div class="intro-stat-num">300+</div>
-          <div class="intro-stat-label">Sanctuaries created</div>
-        </div>
-        <div class="intro-stat">
-          <div class="intro-stat-num">100%</div>
-          <div class="intro-stat-label">Custom designed</div>
-        </div>
-        <div class="intro-stat">
-          <div class="intro-stat-num">1</div>
-          <div class="intro-stat-label">Purpose: your peace</div>
-        </div>
+      <div class="intro-stats anim delay-2">
+        <div class="stat"><div class="stat-n">30+</div><div class="stat-l">Years of craft</div></div>
+        <div class="stat"><div class="stat-n">300+</div><div class="stat-l">Sanctuaries created</div></div>
+        <div class="stat"><div class="stat-n">100%</div><div class="stat-l">Custom designed</div></div>
+        <div class="stat"><div class="stat-n">1</div><div class="stat-l">Purpose — your peace</div></div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- SIGNATURE SPACES -->
-  <section class="section spaces-section">
-    <div class="container">
-      <div class="section-header reveal">
+  <!-- Signature Spaces -->
+  <section class="sec cards-sec">
+    <div class="wrap">
+      <div class="text-center anim" style="margin-bottom:3.5rem">
         <span class="eyebrow">Signature Spaces</span>
         <h2>Designed for Stillness.<br>Built for Beauty.</h2>
         <div class="divider"></div>
-        <p>Each space we create is unique to you — shaped by your landscape, your rhythm, and your vision of peace.</p>
+        <p>Each space is unique to you — shaped by your landscape, your rhythm, and your vision of peace.</p>
       </div>
-      <div class="spaces-grid">
-        <div class="space-card reveal d1" onclick="navigate('meditation')">
-          <div class="space-card-img">
-            <img src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?w=800&q=80" alt="Meditation Station" loading="lazy">
+      <div class="cards-grid">
+
+        <div class="card anim delay-1" onclick="go('meditation')">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=700&q=80" alt="Meditation garden with trees" loading="lazy">
           </div>
-          <div class="space-card-body">
-            <div class="space-card-icon"><svg><use href="#i-moon"/></svg></div>
+          <div class="card-body">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </div>
             <h3>Meditation Stations</h3>
             <p>Private garden nooks designed for quiet practice — stone seating, soft planting, and gentle water sounds.</p>
           </div>
         </div>
-        <div class="space-card reveal d2" onclick="navigate('retreats')">
-          <div class="space-card-img">
-            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Waterfall Feature" loading="lazy">
+
+        <div class="card anim delay-2" onclick="go('retreats')">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=700&q=80" alt="Water feature in garden" loading="lazy">
           </div>
-          <div class="space-card-body">
-            <div class="space-card-icon"><svg><use href="#i-water"/></svg></div>
+          <div class="card-body">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 4 7.5 4 10c0 4.42 3.58 8 8 8s8-3.58 8-8c0-2.5-2.48-8-8-8z"/></svg>
+            </div>
             <h3>Waterfalls &amp; Water Features</h3>
             <p>Custom-built waterfalls and ponds that bring the calming sound of moving water to your private retreat.</p>
           </div>
         </div>
-        <div class="space-card reveal d3" onclick="navigate('retreats')">
-          <div class="space-card-img">
-            <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80" alt="Garden Retreat" loading="lazy">
+
+        <div class="card anim delay-3" onclick="go('retreats')">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=700&q=80" alt="Beautiful garden retreat" loading="lazy">
           </div>
-          <div class="space-card-body">
-            <div class="space-card-icon"><svg><use href="#i-heart"/></svg></div>
+          <div class="card-body">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
             <h3>Heart-Shaped Patios</h3>
             <p>Romantic custom stonework patios — a signature space for couples who want their outdoor space to reflect their love.</p>
           </div>
         </div>
-        <div class="space-card reveal d1" onclick="navigate('meditation')">
-          <div class="space-card-img">
-            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80" alt="Yoga Space" loading="lazy">
+
+        <div class="card anim delay-1" onclick="go('meditation')">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=700&q=80" alt="Peaceful forest garden" loading="lazy">
           </div>
-          <div class="space-card-body">
-            <div class="space-card-icon"><svg><use href="#i-sun"/></svg></div>
+          <div class="card-body">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            </div>
             <h3>Yoga &amp; Breathwork Areas</h3>
             <p>Level, private, beautifully landscaped spaces designed for daily practice in your own backyard.</p>
           </div>
         </div>
-        <div class="space-card reveal d2" onclick="navigate('retreats')">
-          <div class="space-card-img">
-            <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4aaae?w=800&q=80" alt="Private Garden" loading="lazy">
+
+        <div class="card anim delay-2" onclick="go('retreats')">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1473773508845-188df298d2d1?w=700&q=80" alt="Lush garden path" loading="lazy">
           </div>
-          <div class="space-card-body">
-            <div class="space-card-icon"><svg><use href="#i-leaf"/></svg></div>
+          <div class="card-body">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+            </div>
             <h3>Private Garden Retreats</h3>
             <p>Full backyard transformations — lush plantings, stone paths, and quiet zones that feel like a world apart.</p>
           </div>
         </div>
-        <div class="space-card reveal d3" onclick="navigate('retreats')">
-          <div class="space-card-img">
-            <img src="https://images.unsplash.com/photo-1416339134316-0e91dc9ded92?w=800&q=80" alt="Raised Gardens" loading="lazy">
+
+        <div class="card anim delay-3" onclick="go('retreats')">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=700&q=80" alt="Garden with raised beds" loading="lazy">
           </div>
-          <div class="space-card-body">
-            <div class="space-card-icon"><svg><use href="#i-flower"/></svg></div>
+          <div class="card-body">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2a3 3 0 0 1 3 3v1a3 3 0 0 1-6 0V5a3 3 0 0 1 3-3z"/><path d="M12 22a3 3 0 0 1-3-3v-1a3 3 0 0 1 6 0v1a3 3 0 0 1-3 3z"/><path d="M2 12a3 3 0 0 1 3-3h1a3 3 0 0 1 0 6H5a3 3 0 0 1-3-3z"/><path d="M22 12a3 3 0 0 1-3 3h-1a3 3 0 0 1 0-6h1a3 3 0 0 1 3 3z"/></svg>
+            </div>
             <h3>Raised Garden Sanctuaries</h3>
             <p>Custom raised beds with heirloom plantings, winding pathways, and curated perennial gardens.</p>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- PHILOSOPHY -->
-  <section class="section philosophy">
-    <div class="philosophy-inner">
-      <div class="philosophy-img-wrap rl">
-        <div class="philosophy-img">
-          <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=900&q=80" alt="Peaceful garden space" loading="lazy">
+  <!-- Philosophy split -->
+  <section class="sec phil-sec">
+    <div class="phil-inner">
+      <div class="phil-img-wrap anim from-left">
+        <div class="phil-img">
+          <img src="https://images.unsplash.com/photo-1491555103944-7c647fd857e6?w=900&q=80" alt="Serene garden path through green landscape" loading="lazy">
         </div>
-        <div class="philosophy-badge">
-          <div class="philosophy-badge-num">300</div>
-          <div class="philosophy-badge-text">sq ft can change<br>everything</div>
+        <div class="phil-badge">
+          <div class="phil-badge-n">300</div>
+          <div class="phil-badge-l">sq ft can change<br>everything</div>
         </div>
       </div>
-      <div class="rr">
+      <div class="anim from-right">
         <span class="eyebrow">For Homeowners Who Want Something Special</span>
         <h2>This is Not Ordinary Landscaping</h2>
         <div class="divider-left"></div>
         <p>Our work is for homeowners who believe their outdoor space should be more than a yard to maintain — it should be a place that restores you. We design spaces in 300 to 400 square feet that feel like private sanctuaries, built with intention and brought to life through decades of expertise.</p>
-        <ul class="philosophy-list">
+        <ul class="check-list">
           <li>Every design begins with listening — to you, your space, and your vision</li>
           <li>No templates, no shortcuts — only custom work built around your land</li>
           <li>Premium materials: natural stone, mature plants, artisan lighting</li>
           <li>Designed for daily use, not just special occasions</li>
           <li>Built to deepen over time, like a garden should</li>
         </ul>
-        <div style="margin-top:2.5rem;">
-          <button class="btn btn-outline-dark" onclick="navigate('contact')">Start Your Sanctuary</button>
+        <div style="margin-top:2.2rem">
+          <button class="btn btn-ghost-dark" onclick="go('contact')">Start Your Sanctuary</button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- GALLERY PREVIEW -->
-  <section class="section gallery-preview">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="eyebrow">Our Work</span>
-        <h2>Spaces Created With Intention</h2>
-        <div class="divider"></div>
-        <p>A glimpse into the sanctuaries we've created for homeowners who wanted something truly meaningful.</p>
-      </div>
-      <div class="gallery-grid">
-        <div class="gallery-item reveal d1">
-          <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4aaae?w=800&q=80" alt="Garden retreat" loading="lazy">
+  <!-- Gallery preview -->
+  <div class="gal-preview">
+    <div class="wrap">
+      <span class="eyebrow anim">Our Work</span>
+      <h2 class="anim delay-1">Spaces Created With Intention</h2>
+      <div class="divider"></div>
+      <p class="anim delay-2">A glimpse into the sanctuaries we've created for homeowners who wanted something truly meaningful.</p>
+      <div class="gal-grid" style="margin-top:3rem">
+        <div class="gal-item anim delay-1">
+          <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=900&q=80" alt="Lush green landscape" loading="lazy">
         </div>
-        <div class="gallery-item reveal d2">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Waterfall feature" loading="lazy">
+        <div class="gal-item anim delay-2">
+          <img src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?w=600&q=80" alt="Peaceful garden" loading="lazy">
         </div>
-        <div class="gallery-item reveal d3">
-          <img src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?w=600&q=80" alt="Stone pathway" loading="lazy">
+        <div class="gal-item anim delay-3">
+          <img src="https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=600&q=80" alt="Natural stone garden" loading="lazy">
         </div>
-        <div class="gallery-item reveal d4">
-          <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80" alt="Meditation garden" loading="lazy">
+        <div class="gal-item anim delay-2">
+          <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=600&q=80" alt="Forest garden walk" loading="lazy">
         </div>
-        <div class="gallery-item reveal d2">
-          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="Mountain garden" loading="lazy">
-        </div>
-        <div class="gallery-item reveal d3">
-          <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=600&q=80" alt="Private retreat" loading="lazy">
+        <div class="gal-item anim delay-3">
+          <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&q=80" alt="Garden path" loading="lazy">
         </div>
       </div>
-      <div style="text-align:center;margin-top:3rem;" class="reveal">
-        <button class="btn btn-outline" onclick="navigate('gallery')">View Full Gallery</button>
+      <div style="text-align:center;margin-top:3rem" class="anim">
+        <button class="btn btn-ghost" onclick="go('gallery')">View Full Gallery</button>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- TESTIMONIALS -->
-  <section class="section testimonial-section">
-    <div class="container">
-      <div class="section-header reveal">
+  <!-- Testimonials -->
+  <section class="sec testi-sec">
+    <div class="wrap">
+      <div class="text-center anim" style="margin-bottom:3rem">
         <span class="eyebrow">What Our Clients Say</span>
         <h2>Built for Those Who Feel It</h2>
         <div class="divider"></div>
       </div>
-      <div class="testimonial-grid">
-        <div class="testimonial-card reveal d1">
+      <div class="testi-grid">
+        <div class="testi anim delay-1">
           <div class="stars">★★★★★</div>
-          <p class="testimonial-text">"I never expected my backyard to become the place I look forward to most every day. The meditation space they created is truly sacred — I can't imagine life without it now."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">S</div>
-            <div>
-              <div class="testimonial-name">Sarah M.</div>
-              <div class="testimonial-loc">Greenwich, CT</div>
-            </div>
+          <p class="testi-text">"I never expected my backyard to become the place I look forward to most every day. The meditation space they created is truly sacred — I can't imagine life without it."</p>
+          <div class="testi-author">
+            <div class="avatar">S</div>
+            <div><div class="author-name">Sarah M.</div><div class="author-loc">Greenwich, CT</div></div>
           </div>
         </div>
-        <div class="testimonial-card reveal d2">
+        <div class="testi anim delay-2">
           <div class="stars">★★★★★</div>
-          <p class="testimonial-text">"The waterfall and stone patio have transformed the way we spend evenings together. It feels like a five-star resort — right outside our back door. Simply breathtaking work."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">J</div>
-            <div>
-              <div class="testimonial-name">James &amp; Olivia R.</div>
-              <div class="testimonial-loc">Westport, CT</div>
-            </div>
+          <p class="testi-text">"The waterfall and stone patio have transformed the way we spend evenings together. It feels like a five-star resort right outside our back door. Simply breathtaking."</p>
+          <div class="testi-author">
+            <div class="avatar">J</div>
+            <div><div class="author-name">James &amp; Olivia R.</div><div class="author-loc">Westport, CT</div></div>
           </div>
         </div>
-        <div class="testimonial-card reveal d3">
+        <div class="testi anim delay-3">
           <div class="stars">★★★★★</div>
-          <p class="testimonial-text">"Our yoga garden is the most intentional space in our home. Every detail — the stones, the plants, the light — was chosen with such care. This is art, not landscaping."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">P</div>
-            <div>
-              <div class="testimonial-name">Priya &amp; David K.</div>
-              <div class="testimonial-loc">Darien, CT</div>
-            </div>
+          <p class="testi-text">"Our yoga garden is the most intentional space in our home. Every detail — the stones, the plants, the light — was chosen with such care. This is art, not landscaping."</p>
+          <div class="testi-author">
+            <div class="avatar">P</div>
+            <div><div class="author-name">Priya &amp; David K.</div><div class="author-loc">Darien, CT</div></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FINAL CTA -->
-  <section class="final-cta">
-    <div class="container reveal">
+  <!-- Final CTA -->
+  <div class="cta-band">
+    <div class="anim">
       <span class="eyebrow">Begin Your Journey</span>
       <h2>Your Private Outdoor Sanctuary Awaits</h2>
       <p>Every meaningful space begins with a conversation. Tell us what you're longing for — and we'll bring it to life.</p>
-      <div class="final-cta-btns">
-        <button class="btn btn-primary" onclick="navigate('contact')">Start Your Outdoor Sanctuary</button>
-        <button class="btn btn-outline" onclick="navigate('gallery')">View Our Work</button>
+      <div class="cta-btns">
+        <button class="btn btn-gold" onclick="go('contact')">Start Your Outdoor Sanctuary</button>
+        <button class="btn btn-ghost" onclick="go('gallery')">View Our Work</button>
       </div>
     </div>
-  </section>
+  </div>
 
-</div><!-- end home -->
+</div><!-- /home -->
 
-<!-- ============================================================
-     ABOUT PAGE
-     ============================================================ -->
-<div class="page" id="page-about">
+<!-- ══════════════════════════════════════════
+     ABOUT
+══════════════════════════════════════════ -->
+<div class="page" id="p-about">
 
-  <div class="about-hero">
-    <div class="about-hero-inner reveal">
+  <div class="about-top">
+    <div class="about-top-inner anim">
       <span class="eyebrow">Our Story</span>
       <h1>Three Decades of Craft.<br>One Vision of Peace.</h1>
       <p>Love Through Landscape was born from a lifetime of working the land — and a deeper calling to create spaces that truly matter.</p>
     </div>
   </div>
 
-  <div class="about-image-full">
-    <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4aaae?w=1920&q=80" alt="Beautiful garden landscape" loading="lazy">
+  <div class="about-banner">
+    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&q=80" alt="Beautiful green forest landscape" loading="lazy">
   </div>
 
-  <section class="section about-story">
-    <div class="about-story-inner">
-      <div class="about-portrait rl">
-        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&q=80" alt="Landscape designer at work" loading="lazy">
+  <section class="sec about-story-sec">
+    <div class="about-story-grid">
+      <div class="portrait anim from-left">
+        <img src="https://images.unsplash.com/photo-1567016432779-094069958ea5?w=800&q=80" alt="Craftsman working in garden" loading="lazy">
       </div>
-      <div class="about-story-text rr">
+      <div class="story-text anim from-right">
         <span class="eyebrow">The Man Behind the Work</span>
         <h2>From the Ground Up</h2>
         <p>For over thirty years, he worked the land with his hands — clearing, shaping, and building through every season. Tree work, heavy landscaping, hard labor in the sun. Honest, old-school craftsmanship that you could see and feel.</p>
         <p>But somewhere along the way, something shifted. After three decades of doing what was expected, he started asking a deeper question: <em>What if a yard could be more than a yard?</em></p>
         <p>That question became Love Through Landscape — a deliberate remaking of what outdoor spaces can mean. Not mowing and trimming. Not the expected. But private sanctuaries, meditation stations, waterfall gardens, and peaceful retreats built with genuine intention for homeowners who want their land to reflect who they are inside.</p>
         <p>The skills are the same. The experience is real. But the purpose is entirely new — and the results are something far more meaningful than landscaping.</p>
-        <div style="margin-top:2rem;">
-          <button class="btn btn-outline-dark" onclick="navigate('contact')">Work With Us</button>
+        <div style="margin-top:2rem">
+          <button class="btn btn-ghost-dark" onclick="go('contact')">Work With Us</button>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section about-values">
-    <div class="container">
-      <div class="section-header reveal">
+  <section class="sec values-sec">
+    <div class="wrap">
+      <div class="text-center anim" style="margin-bottom:3rem">
         <span class="eyebrow">What We Stand For</span>
         <h2>Built on These Beliefs</h2>
         <div class="divider"></div>
       </div>
       <div class="values-grid">
-        <div class="value-card reveal d1">
-          <div class="value-icon"><svg><use href="#i-leaf"/></svg></div>
+        <div class="val anim delay-1">
+          <div class="val-icon"><svg viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
           <h3>Craft Over Speed</h3>
           <p>We take the time a space deserves. Every stone placed with care, every plant chosen with intention. There is no rushing meaningful work.</p>
         </div>
-        <div class="value-card reveal d2">
-          <div class="value-icon"><svg><use href="#i-heart"/></svg></div>
+        <div class="val anim delay-2">
+          <div class="val-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
           <h3>Created With Love</h3>
           <p>The name is not a brand exercise — it's a genuine philosophy. We believe beautiful spaces are built when you care deeply about the outcome.</p>
         </div>
-        <div class="value-card reveal d3">
-          <div class="value-icon"><svg><use href="#i-moon"/></svg></div>
+        <div class="val anim delay-3">
+          <div class="val-icon"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></div>
           <h3>Designed for Stillness</h3>
           <p>Every design choice is filtered through one question: will this create peace? Noise, clutter, and chaos have no place in a sanctuary.</p>
         </div>
-        <div class="value-card reveal d1">
-          <div class="value-icon"><svg><use href="#i-stone"/></svg></div>
+        <div class="val anim delay-1">
+          <div class="val-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
           <h3>Old-World Materials</h3>
-          <p>Natural stone, mature plantings, handcrafted elements. Nothing generic. Every material is chosen to age beautifully and feel genuinely grounded.</p>
+          <p>Natural stone, mature plantings, handcrafted elements. Nothing generic — every material is chosen to age beautifully and feel genuinely grounded.</p>
         </div>
-        <div class="value-card reveal d2">
-          <div class="value-icon"><svg><use href="#i-path"/></svg></div>
+        <div class="val anim delay-2">
+          <div class="val-icon"><svg viewBox="0 0 24 24"><path d="M3 17c3 0 4.5-3 7.5-3S14 17 17 17s4.5-3 7.5-3"/><path d="M3 7c3 0 4.5 3 7.5 3S14 7 17 7s4.5 3 7.5 3"/></svg></div>
           <h3>Completely Custom</h3>
-          <p>We don't offer packages or pre-set templates. Every space is designed from a blank canvas, shaped entirely around your land and your life.</p>
+          <p>We don't offer packages or templates. Every space is designed from a blank canvas, shaped entirely around your land and your life.</p>
         </div>
-        <div class="value-card reveal d3">
-          <div class="value-icon"><svg><use href="#i-sun"/></svg></div>
+        <div class="val anim delay-3">
+          <div class="val-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg></div>
           <h3>Lasting Impact</h3>
-          <p>We design spaces that deepen with time — where every season makes them more beautiful, and every year makes them more yours.</p>
+          <p>We design spaces that deepen with time — where every season makes them more beautiful and every year makes them more yours.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="final-cta">
-    <div class="container reveal">
+  <div class="cta-band">
+    <div class="anim">
       <span class="eyebrow">Let's Begin</span>
       <h2>Every Sanctuary Starts With a Story</h2>
       <p>Share yours with us. We'll listen, dream alongside you, and design a space that feels like it was always meant to be there.</p>
-      <div class="final-cta-btns">
-        <button class="btn btn-primary" onclick="navigate('contact')">Request a Consultation</button>
+      <div class="cta-btns">
+        <button class="btn btn-gold" onclick="go('contact')">Request a Consultation</button>
       </div>
     </div>
-  </section>
+  </div>
 
-</div><!-- end about -->
+</div><!-- /about -->
 
-<!-- ============================================================
-     MEDITATION STATIONS PAGE
-     ============================================================ -->
-<div class="page" id="page-meditation">
+<!-- ══════════════════════════════════════════
+     MEDITATION STATIONS
+══════════════════════════════════════════ -->
+<div class="page" id="p-meditation">
 
   <div class="med-hero">
     <div class="med-hero-bg"></div>
-    <div class="med-hero-content">
+    <div class="hero-inner">
       <span class="eyebrow">Core Offering</span>
       <h1>Meditation Stations</h1>
       <p>Custom outdoor spaces designed for quiet practice, personal grounding, and daily renewal — right in your own backyard.</p>
     </div>
   </div>
 
-  <section class="section med-intro">
-    <div class="med-intro-inner">
-      <div class="rl">
+  <section class="sec med-intro-sec">
+    <div class="med-intro-grid wrap">
+      <div class="anim from-left">
         <span class="eyebrow">What Is a Meditation Station?</span>
         <h2>A Private Sanctuary Designed for Stillness</h2>
         <p>A meditation station is a dedicated outdoor space — typically 300 to 400 square feet — designed specifically to support quiet practice, yoga, breathwork, reflection, and personal grounding.</p>
         <p>It is not a patio. It is not a garden feature. It is a thoughtfully designed, professionally built outdoor room — a place that invites you to slow down, breathe, and simply be.</p>
         <p>Every station is designed around you: your practice, your landscape, your sense of beauty, and the kind of stillness you're looking for.</p>
-        <div style="margin-top:2rem;">
-          <button class="btn btn-outline-dark" onclick="navigate('contact')">Design My Meditation Space</button>
+        <div style="margin-top:2rem">
+          <button class="btn btn-ghost-dark" onclick="go('contact')">Design My Meditation Space</button>
         </div>
       </div>
-      <div class="med-img-round rr">
-        <img src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?w=900&q=80" alt="Meditation garden" loading="lazy">
+      <div class="round-img anim from-right">
+        <img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=900&q=80" alt="Peaceful forest meditation setting" loading="lazy">
       </div>
     </div>
   </section>
 
-  <section class="section features-section">
-    <div class="container">
-      <div class="section-header reveal">
+  <section class="sec features-sec">
+    <div class="wrap">
+      <div class="text-center anim" style="margin-bottom:2rem">
         <span class="eyebrow">What's Included</span>
         <h2>Possible Features of Your Station</h2>
         <div class="divider"></div>
         <p>We select only the elements that serve your space and your practice. Every feature is chosen with care.</p>
       </div>
       <div class="features-grid">
-        <div class="feature-item reveal d1">
-          <div class="feature-num">01</div>
-          <h4>Natural Stone Seating</h4>
-          <p>Hand-selected boulders and carved stone benches that feel rooted, timeless, and perfectly placed.</p>
-        </div>
-        <div class="feature-item reveal d2">
-          <div class="feature-num">02</div>
-          <h4>Small Waterfalls &amp; Fountains</h4>
-          <p>Custom-built water features that provide gentle ambient sound — grounding the space in natural calm.</p>
-        </div>
-        <div class="feature-item reveal d3">
-          <div class="feature-num">03</div>
-          <h4>Privacy Planting</h4>
-          <p>Strategic evergreen screening and lush borders that create true seclusion and a sense of entering a separate world.</p>
-        </div>
-        <div class="feature-item reveal d1">
-          <div class="feature-num">04</div>
-          <h4>Paver &amp; Stone Patios</h4>
-          <p>Level, beautifully laid stone or paver surfaces designed for yoga, seated practice, or simply standing in stillness.</p>
-        </div>
-        <div class="feature-item reveal d2">
-          <div class="feature-num">05</div>
-          <h4>Heart-Shaped Layouts</h4>
-          <p>Our signature patio shape for couples — romantic, intentional, and completely custom-laid in natural stone.</p>
-        </div>
-        <div class="feature-item reveal d3">
-          <div class="feature-num">06</div>
-          <h4>Ambient Soft Lighting</h4>
-          <p>Warm, low-level lighting integrated naturally into the landscape — extending the usable hours of your sanctuary.</p>
-        </div>
-        <div class="feature-item reveal d1">
-          <div class="feature-num">07</div>
-          <h4>Winding Pathways</h4>
-          <p>Intentionally designed stone or gravel paths that slow your approach and signal: this is a place apart.</p>
-        </div>
-        <div class="feature-item reveal d2">
-          <div class="feature-num">08</div>
-          <h4>Raised Garden Beds</h4>
-          <p>Hand-built raised planters with curated medicinal or sensory plants — lavender, sage, chamomile, and more.</p>
-        </div>
-        <div class="feature-item reveal d3">
-          <div class="feature-num">09</div>
-          <h4>Peaceful Sitting Areas</h4>
-          <p>Designed for long, quiet sitting — the right orientation to light, sound, and natural views.</p>
-        </div>
+        <div class="feat anim delay-1"><div class="feat-n">01</div><h4>Natural Stone Seating</h4><p>Hand-selected boulders and carved stone benches that feel rooted, timeless, and perfectly placed.</p></div>
+        <div class="feat anim delay-2"><div class="feat-n">02</div><h4>Small Waterfalls &amp; Fountains</h4><p>Custom-built water features that provide gentle ambient sound — grounding the space in natural calm.</p></div>
+        <div class="feat anim delay-3"><div class="feat-n">03</div><h4>Privacy Planting</h4><p>Strategic evergreen screening and lush borders that create true seclusion and a sense of entering a separate world.</p></div>
+        <div class="feat anim delay-1"><div class="feat-n">04</div><h4>Paver &amp; Stone Patios</h4><p>Level, beautifully laid stone or paver surfaces designed for yoga, seated practice, or simply standing in stillness.</p></div>
+        <div class="feat anim delay-2"><div class="feat-n">05</div><h4>Heart-Shaped Layouts</h4><p>Our signature patio shape for couples — romantic, intentional, and completely custom-laid in natural stone.</p></div>
+        <div class="feat anim delay-3"><div class="feat-n">06</div><h4>Soft Ambient Lighting</h4><p>Warm, low-level lighting integrated naturally into the landscape — extending the usable hours of your sanctuary.</p></div>
+        <div class="feat anim delay-1"><div class="feat-n">07</div><h4>Winding Pathways</h4><p>Intentionally designed stone or gravel paths that slow your approach and signal: this is a place apart.</p></div>
+        <div class="feat anim delay-2"><div class="feat-n">08</div><h4>Raised Garden Beds</h4><p>Hand-built raised planters with medicinal or sensory plants — lavender, sage, chamomile, and more.</p></div>
+        <div class="feat anim delay-3"><div class="feat-n">09</div><h4>Peaceful Sitting Areas</h4><p>Designed for long, quiet sitting — the right orientation to light, sound, and natural views.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="section process-section">
-    <div class="container">
-      <span class="eyebrow" style="display:block;text-align:center;">How It Works</span>
-      <h2>From Conversation to Completed Sanctuary</h2>
-      <div class="process-steps" style="margin-top:3rem;">
-        <div class="process-step reveal d1">
-          <div class="step-num">1</div>
-          <h4>Consultation</h4>
-          <p>We visit your property, listen to your vision, and understand your landscape's natural character.</p>
-        </div>
-        <div class="process-step reveal d2">
-          <div class="step-num">2</div>
-          <h4>Custom Design</h4>
-          <p>We present a bespoke design — layout, materials, plantings, and features — built around your space.</p>
-        </div>
-        <div class="process-step reveal d3">
-          <div class="step-num">3</div>
-          <h4>Crafted Build</h4>
-          <p>Our team works with precision and care, treating your property with the respect it deserves.</p>
-        </div>
-        <div class="process-step reveal d4">
-          <div class="step-num">4</div>
-          <h4>Your Sanctuary</h4>
-          <p>You receive a complete, beautiful outdoor space — ready to use the day we finish.</p>
-        </div>
+  <div class="process-sec">
+    <div class="wrap">
+      <span class="eyebrow" style="display:block;text-align:center" class="anim">How It Works</span>
+      <h2 class="anim">From Conversation to Completed Sanctuary</h2>
+      <div class="process-steps">
+        <div class="step anim delay-1"><div class="step-n">1</div><h4>Consultation</h4><p>We visit your property, listen to your vision, and understand your landscape's natural character.</p></div>
+        <div class="step anim delay-2"><div class="step-n">2</div><h4>Custom Design</h4><p>We present a bespoke design — layout, materials, plantings, and features — built around your space.</p></div>
+        <div class="step anim delay-3"><div class="step-n">3</div><h4>Crafted Build</h4><p>Our team works with precision and care, treating your property with the respect it deserves.</p></div>
+        <div class="step anim delay-4"><div class="step-n">4</div><h4>Your Sanctuary</h4><p>You receive a complete, beautiful outdoor space — ready to use the day we finish.</p></div>
       </div>
-    </div>
-  </section>
-
-  <section class="final-cta">
-    <div class="container reveal">
-      <span class="eyebrow">Begin Here</span>
-      <h2>Ready to Design Your Meditation Station?</h2>
-      <p>Tell us about your space and your vision. We'll take it from there.</p>
-      <div class="final-cta-btns">
-        <button class="btn btn-primary" onclick="navigate('contact')">Request a Consultation</button>
-        <button class="btn btn-outline" onclick="navigate('gallery')">See Examples</button>
-      </div>
-    </div>
-  </section>
-
-</div><!-- end meditation -->
-
-<!-- ============================================================
-     OUTDOOR RETREATS PAGE
-     ============================================================ -->
-<div class="page" id="page-retreats">
-
-  <div class="retreats-hero">
-    <div class="retreats-hero-bg"></div>
-    <div class="retreats-hero-content">
-      <span class="eyebrow">Full Backyard Transformations</span>
-      <h1>Outdoor Retreats</h1>
-      <p>Larger luxury landscape transformations — water features, custom patios, garden paths, and complete private outdoor sanctuaries for homeowners who want something extraordinary.</p>
     </div>
   </div>
 
-  <section class="section retreats-offerings">
-    <div class="container">
-      <div class="section-header reveal">
+  <div class="cta-band">
+    <div class="anim">
+      <span class="eyebrow">Begin Here</span>
+      <h2>Ready to Design Your Meditation Station?</h2>
+      <p>Tell us about your space and your vision. We'll take it from there.</p>
+      <div class="cta-btns">
+        <button class="btn btn-gold" onclick="go('contact')">Request a Consultation</button>
+        <button class="btn btn-ghost" onclick="go('gallery')">See Examples</button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /meditation -->
+
+<!-- ══════════════════════════════════════════
+     OUTDOOR RETREATS
+══════════════════════════════════════════ -->
+<div class="page" id="p-retreats">
+
+  <div class="ret-hero">
+    <div class="ret-hero-bg"></div>
+    <div class="hero-inner">
+      <span class="eyebrow">Full Backyard Transformations</span>
+      <h1>Outdoor Retreats</h1>
+      <p>Larger luxury landscape transformations — water features, custom patios, garden paths, and complete private outdoor sanctuaries.</p>
+    </div>
+  </div>
+
+  <section class="sec offerings-sec">
+    <div class="wrap">
+      <div class="text-center anim" style="margin-bottom:2rem">
         <span class="eyebrow">What We Create</span>
         <h2>Spaces That Transform How You Live</h2>
         <div class="divider"></div>
-        <p>Our outdoor retreats are full-scale backyard transformations — designed for beauty, built for living, and created with the kind of care that shows in every detail.</p>
+        <p>Our outdoor retreats are full-scale backyard transformations — designed for beauty, built for living, created with care that shows in every detail.</p>
       </div>
       <div class="offerings-grid">
-        <div class="offering-card reveal d1">
-          <div class="offering-img">
-            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80" alt="Water features" loading="lazy">
-          </div>
-          <div class="offering-body">
+        <div class="offering anim delay-1">
+          <div class="off-img"><img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800&q=80" alt="Peaceful water in landscape" loading="lazy"></div>
+          <div class="off-body">
             <h3>Water Features &amp; Pondscapes</h3>
-            <p>Custom waterfalls, reflection ponds, and naturalistic streams that bring the sound and movement of water into your daily life. Each feature is built to look as though it's always been there.</p>
-            <div class="offering-tags">
-              <span class="offering-tag">Waterfalls</span>
-              <span class="offering-tag">Koi Ponds</span>
-              <span class="offering-tag">Streams</span>
-              <span class="offering-tag">Fountains</span>
-            </div>
+            <p>Custom waterfalls, reflection ponds, and naturalistic streams that bring the sound and movement of water into your daily life.</p>
+            <div class="tags"><span class="tag">Waterfalls</span><span class="tag">Koi Ponds</span><span class="tag">Streams</span><span class="tag">Fountains</span></div>
           </div>
         </div>
-        <div class="offering-card reveal d2">
-          <div class="offering-img">
-            <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=900&q=80" alt="Custom patio" loading="lazy">
-          </div>
-          <div class="offering-body">
-            <h3>Custom Patios &amp; Stone Terrace Work</h3>
-            <p>Handcrafted stonework patios — from intimate heart-shaped couple's spaces to expansive natural stone terraces designed for entertaining, relaxing, and simply breathing.</p>
-            <div class="offering-tags">
-              <span class="offering-tag">Natural Stone</span>
-              <span class="offering-tag">Bluestone</span>
-              <span class="offering-tag">Flagstone</span>
-              <span class="offering-tag">Pavers</span>
-            </div>
+        <div class="offering anim delay-2">
+          <div class="off-img"><img src="https://images.unsplash.com/photo-1564419320461-6870880221ad?w=800&q=80" alt="Stone garden terrace" loading="lazy"></div>
+          <div class="off-body">
+            <h3>Custom Patios &amp; Stone Terraces</h3>
+            <p>Handcrafted stonework patios — from intimate heart-shaped couple's spaces to expansive natural stone terraces.</p>
+            <div class="tags"><span class="tag">Natural Stone</span><span class="tag">Bluestone</span><span class="tag">Flagstone</span></div>
           </div>
         </div>
-        <div class="offering-card reveal d1">
-          <div class="offering-img">
-            <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=900&q=80" alt="Garden paths" loading="lazy">
-          </div>
-          <div class="offering-body">
+        <div class="offering anim delay-1">
+          <div class="off-img"><img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80" alt="Aerial garden landscape" loading="lazy"></div>
+          <div class="off-body">
             <h3>Garden Paths &amp; Private Walkways</h3>
             <p>Winding stone or gravel pathways that invite unhurried movement through your garden — connecting spaces and creating the feeling of a private estate.</p>
-            <div class="offering-tags">
-              <span class="offering-tag">Stone Paths</span>
-              <span class="offering-tag">Gravel Walks</span>
-              <span class="offering-tag">Stepping Stones</span>
-            </div>
+            <div class="tags"><span class="tag">Stone Paths</span><span class="tag">Gravel Walks</span><span class="tag">Stepping Stones</span></div>
           </div>
         </div>
-        <div class="offering-card reveal d2">
-          <div class="offering-img">
-            <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4aaae?w=900&q=80" alt="Relaxation zones" loading="lazy">
-          </div>
-          <div class="offering-body">
+        <div class="offering anim delay-2">
+          <div class="off-img"><img src="https://images.unsplash.com/photo-1560749003-f4b1e17e2dff?w=800&q=80" alt="Luxury garden retreat" loading="lazy"></div>
+          <div class="off-body">
             <h3>Couple's Retreats &amp; Relaxation Zones</h3>
-            <p>Private outdoor sanctuaries designed specifically for two — secluded, romantic, and surrounded by lush, intentional planting that creates a world entirely your own.</p>
-            <div class="offering-tags">
-              <span class="offering-tag">Private</span>
-              <span class="offering-tag">Romantic</span>
-              <span class="offering-tag">Lush Planting</span>
-              <span class="offering-tag">Seating</span>
-            </div>
+            <p>Private outdoor sanctuaries designed specifically for two — secluded, romantic, and surrounded by lush, intentional planting.</p>
+            <div class="tags"><span class="tag">Private</span><span class="tag">Romantic</span><span class="tag">Lush Planting</span></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section retreat-showcase">
-    <div class="showcase-inner">
-      <div class="showcase-img rl">
-        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80" alt="Full retreat transformation" loading="lazy">
+  <section class="sec showcase-sec">
+    <div class="showcase-grid wrap">
+      <div class="showcase-img anim from-left">
+        <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=900&q=80" alt="Full retreat transformation with trees" loading="lazy">
       </div>
-      <div class="showcase-text rr">
+      <div class="anim from-right">
         <span class="eyebrow">The Full Transformation</span>
         <h2>Premium Residential Landscapes, Built With Intention</h2>
         <p>Our full outdoor retreat designs reimagine your entire backyard as a cohesive, intentional landscape. Every element — from the waterfall to the final planting — is considered as part of a whole that tells a story about rest, beauty, and the life you want to live.</p>
-        <p>These are spaces designed for the long term: to be lived in deeply, to grow more beautiful with each season, and to become a defining part of how your home feels.</p>
-        <ul class="showcase-list">
-          <li><span class="check-icon">✓</span> Full property assessment and custom design</li>
-          <li><span class="check-icon">✓</span> Premium natural materials and mature plantings</li>
-          <li><span class="check-icon">✓</span> Integrated water features and lighting</li>
-          <li><span class="check-icon">✓</span> Private screening and privacy planting</li>
-          <li><span class="check-icon">✓</span> Stone pathways and garden structure</li>
-          <li><span class="check-icon">✓</span> Seasonal care and planting guidance</li>
+        <p>These are spaces designed for the long term: to be lived in deeply, to grow more beautiful with each season.</p>
+        <ul class="feat-list">
+          <li><span class="chk">✓</span> Full property assessment and custom design</li>
+          <li><span class="chk">✓</span> Premium natural materials and mature plantings</li>
+          <li><span class="chk">✓</span> Integrated water features and lighting</li>
+          <li><span class="chk">✓</span> Private screening and privacy planting</li>
+          <li><span class="chk">✓</span> Stone pathways and garden structure</li>
+          <li><span class="chk">✓</span> Seasonal care and planting guidance</li>
         </ul>
-        <div style="margin-top:2.5rem;">
-          <button class="btn btn-outline-dark" onclick="navigate('contact')">Start Your Retreat</button>
+        <div style="margin-top:2.2rem">
+          <button class="btn btn-ghost-dark" onclick="go('contact')">Start Your Retreat</button>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="final-cta">
-    <div class="container reveal">
+  <div class="cta-band">
+    <div class="anim">
       <span class="eyebrow">Transform Your Outdoor Life</span>
       <h2>Your Complete Outdoor Sanctuary Starts Here</h2>
       <p>Let's talk about what's possible on your property. The consultation is the beginning of something beautiful.</p>
-      <div class="final-cta-btns">
-        <button class="btn btn-primary" onclick="navigate('contact')">Request a Consultation</button>
-        <button class="btn btn-outline" onclick="navigate('gallery')">View Our Portfolio</button>
+      <div class="cta-btns">
+        <button class="btn btn-gold" onclick="go('contact')">Request a Consultation</button>
+        <button class="btn btn-ghost" onclick="go('gallery')">View Our Portfolio</button>
       </div>
     </div>
-  </section>
+  </div>
 
-</div><!-- end retreats -->
+</div><!-- /retreats -->
 
-<!-- ============================================================
-     GALLERY PAGE
-     ============================================================ -->
-<div class="page" id="page-gallery">
+<!-- ══════════════════════════════════════════
+     GALLERY
+══════════════════════════════════════════ -->
+<div class="page" id="p-gallery">
 
-  <div class="gallery-hero">
-    <div class="container reveal">
+  <div class="gal-top">
+    <div class="wrap anim">
       <span class="eyebrow">Our Portfolio</span>
       <h1>Spaces Created With Intention</h1>
       <p>Every project is unique. Every space tells the story of the homeowner who lives there.</p>
     </div>
   </div>
 
-  <div class="gallery-full">
-    <div class="container">
-      <div class="gallery-categories reveal">
-        <button class="cat-btn active" onclick="filterGallery(this,'all')">All Work</button>
-        <button class="cat-btn" onclick="filterGallery(this,'water')">Water Features</button>
-        <button class="cat-btn" onclick="filterGallery(this,'meditation')">Meditation Areas</button>
-        <button class="cat-btn" onclick="filterGallery(this,'patio')">Patios</button>
-        <button class="cat-btn" onclick="filterGallery(this,'garden')">Garden Retreats</button>
-        <button class="cat-btn" onclick="filterGallery(this,'path')">Pathways</button>
+  <div class="gal-full">
+    <div class="wrap">
+      <div class="cat-bar anim">
+        <button class="cat on" onclick="filter(this,'all')">All Work</button>
+        <button class="cat" onclick="filter(this,'water')">Water Features</button>
+        <button class="cat" onclick="filter(this,'med')">Meditation Areas</button>
+        <button class="cat" onclick="filter(this,'patio')">Patios</button>
+        <button class="cat" onclick="filter(this,'garden')">Garden Retreats</button>
+        <button class="cat" onclick="filter(this,'path')">Pathways</button>
       </div>
-      <div class="masonry" id="gallery-masonry">
-        <div class="masonry-item" data-cat="water">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Custom waterfall" loading="lazy">
-          <div class="masonry-item-overlay"><span class="masonry-item-label">Waterfall Feature</span></div>
-        </div>
-        <div class="masonry-item" data-cat="meditation">
-          <img src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?w=600&q=80" alt="Meditation garden" loading="lazy">
-          <div class="masonry-item-overlay"><span class="masonry-item-label">Meditation Station</span></div>
-        </div>
-        <div class="masonry-item" data-cat="garden">
-          <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4aaae?w=600&q=80" alt="Garden sanctuary" loading="lazy">
-          <div class="masonry-item-overlay"><span class="masonry-item-label">Garden Retreat</span></div>
-        </div>
-        <div class="masonry-item" data-cat="patio">
-          <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80" alt="Stone patio" loading="lazy">
-          <div class="masonry-item-overlay"><span class="masonry-item-label">Natural Stone Patio</span></div>
-        </div>
-        <div class="masonry-item" data-cat="path">
-          <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=600&q=80" alt="Garden path" loading="lazy">
-          <div class="masonry-item-overlay"><span class="masonry-item-label">Garden Pathway</span></div>
-        </div>
-        <div class="masonry-item" data-cat="meditation">
-          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="Yoga space" loading="lazy">
-          <div class="masonry-item-overlay"><span class="masonry-item-label">Yoga &amp; Breathwork Space</span></div>
-        </div>
-        <div class="masonry-item" data-cat="garden">
-          <img src="https://images.unsplash.com/photo-1416339134316-0e91dc9ded92?w=600&q=80" alt="Raised garden" loading="lazy">
-          <div class="masonry-item-overlay"><span class="masonry-item-label">Raised Garden Sanctuary</span></div>
-        </div>
-        <div class="masonry-item" data-cat="water">
-          <img src="https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?w=600&q=80" alt="Reflection pond" loading="lazy">
-          <div class="masonry-item-overlay"><span class="masonry-item-label">Reflection Pond</span></div>
-        </div>
-        <div class="masonry-item" data-cat="patio">
-          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80" alt="Terrace retreat" loading="lazy">
-          <div class="masonry-item-overlay"><span class="masonry-item-label">Terrace Retreat</span></div>
-        </div>
-        <div class="masonry-item" data-cat="garden">
-          <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&q=80" alt="Lush garden retreat" loading="lazy">
-          <div class="masonry-item-overlay"><span class="masonry-item-label">Private Garden</span></div>
-        </div>
-        <div class="masonry-item" data-cat="path">
-          <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=600&q=80" alt="Woodland path" loading="lazy">
-          <div class="masonry-item-overlay"><span class="masonry-item-label">Woodland Walk</span></div>
-        </div>
-        <div class="masonry-item" data-cat="meditation">
-          <img src="https://images.unsplash.com/photo-1541840031508-326c21a2fcdf?w=600&q=80" alt="Zen garden" loading="lazy">
-          <div class="masonry-item-overlay"><span class="masonry-item-label">Zen Garden Station</span></div>
-        </div>
+      <div class="masonry" id="masonry">
+        <div class="m-item" data-c="water"><img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=600&q=80" alt="Water feature" loading="lazy"><div class="m-overlay"><span class="m-label">Water Feature</span></div></div>
+        <div class="m-item" data-c="med"><img src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?w=600&q=80" alt="Meditation area" loading="lazy"><div class="m-overlay"><span class="m-label">Meditation Station</span></div></div>
+        <div class="m-item" data-c="garden"><img src="https://images.unsplash.com/photo-1473773508845-188df298d2d1?w=600&q=80" alt="Garden retreat" loading="lazy"><div class="m-overlay"><span class="m-label">Garden Retreat</span></div></div>
+        <div class="m-item" data-c="patio"><img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80" alt="Garden patio" loading="lazy"><div class="m-overlay"><span class="m-label">Garden Patio</span></div></div>
+        <div class="m-item" data-c="path"><img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=600&q=80" alt="Peaceful path" loading="lazy"><div class="m-overlay"><span class="m-label">Garden Pathway</span></div></div>
+        <div class="m-item" data-c="med"><img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80" alt="Yoga garden" loading="lazy"><div class="m-overlay"><span class="m-label">Yoga &amp; Breathwork Space</span></div></div>
+        <div class="m-item" data-c="garden"><img src="https://images.unsplash.com/photo-1416339134316-0e91dc9ded92?w=600&q=80" alt="Garden sanctuary" loading="lazy"><div class="m-overlay"><span class="m-label">Garden Sanctuary</span></div></div>
+        <div class="m-item" data-c="water"><img src="https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?w=600&q=80" alt="Pond and water" loading="lazy"><div class="m-overlay"><span class="m-label">Reflection Pond</span></div></div>
+        <div class="m-item" data-c="patio"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80" alt="Stone terrace" loading="lazy"><div class="m-overlay"><span class="m-label">Stone Terrace</span></div></div>
+        <div class="m-item" data-c="garden"><img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&q=80" alt="Lush private garden" loading="lazy"><div class="m-overlay"><span class="m-label">Private Garden</span></div></div>
+        <div class="m-item" data-c="path"><img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=600&q=80" alt="Woodland pathway" loading="lazy"><div class="m-overlay"><span class="m-label">Woodland Walk</span></div></div>
+        <div class="m-item" data-c="med"><img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=600&q=80" alt="Zen garden space" loading="lazy"><div class="m-overlay"><span class="m-label">Zen Garden Station</span></div></div>
       </div>
     </div>
   </div>
 
-  <section class="final-cta">
-    <div class="container reveal">
+  <div class="cta-band">
+    <div class="anim">
       <span class="eyebrow">Inspired?</span>
-      <h2>Let's Create Something<br>Uniquely Yours</h2>
+      <h2>Let's Create Something Uniquely Yours</h2>
       <p>Every space in our gallery began with a conversation. Yours can too.</p>
-      <div class="final-cta-btns">
-        <button class="btn btn-primary" onclick="navigate('contact')">Start Your Sanctuary</button>
+      <div class="cta-btns">
+        <button class="btn btn-gold" onclick="go('contact')">Start Your Sanctuary</button>
       </div>
     </div>
-  </section>
+  </div>
 
-</div><!-- end gallery -->
+</div><!-- /gallery -->
 
-<!-- ============================================================
-     CONTACT PAGE
-     ============================================================ -->
-<div class="page" id="page-contact">
+<!-- ══════════════════════════════════════════
+     CONTACT
+══════════════════════════════════════════ -->
+<div class="page" id="p-contact">
 
-  <div class="contact-hero">
-    <div class="container reveal">
+  <div class="con-top">
+    <div class="wrap anim">
       <span class="eyebrow">Begin Here</span>
       <h1>Start Your Outdoor Sanctuary</h1>
       <p>Every meaningful space begins with a conversation. Tell us what you're looking for, and we'll design it with you.</p>
     </div>
   </div>
 
-  <section class="contact-section">
-    <div class="contact-inner">
-      <div class="contact-info rl">
+  <div class="con-sec">
+    <div class="con-grid">
+      <div class="con-info anim from-left">
         <span class="eyebrow">Get In Touch</span>
         <h2>We'd Love to Hear Your Vision</h2>
-        <p>Whether you have a clear picture in mind or simply know you want something different — something beautiful and meaningful — we're here to listen and design alongside you.</p>
-        <div class="contact-details">
-          <div class="contact-detail-item">
-            <div class="contact-detail-icon"><svg><use href="#i-phone"/></svg></div>
-            <div>
-              <div class="contact-detail-label">Phone</div>
-              <div class="contact-detail-value">(860) 555-0148</div>
-            </div>
+        <p>Whether you have a clear picture in mind or simply know you want something different — something beautiful and meaningful — we're here to listen.</p>
+        <div class="con-details">
+          <div class="con-row">
+            <div class="con-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.09a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div><div class="con-lbl">Phone</div><div class="con-val">(860) 555-0148</div></div>
           </div>
-          <div class="contact-detail-item">
-            <div class="contact-detail-icon"><svg><use href="#i-mail"/></svg></div>
-            <div>
-              <div class="contact-detail-label">Email</div>
-              <div class="contact-detail-value">hello@lovethroughlandscape.com</div>
-            </div>
+          <div class="con-row">
+            <div class="con-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div><div class="con-lbl">Email</div><div class="con-val">hello@lovethroughlandscape.com</div></div>
           </div>
-          <div class="contact-detail-item">
-            <div class="contact-detail-icon"><svg><use href="#i-pin"/></svg></div>
-            <div>
-              <div class="contact-detail-label">Service Area</div>
-              <div class="contact-detail-value">Connecticut &amp; Surrounding Areas</div>
-            </div>
+          <div class="con-row">
+            <div class="con-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><div class="con-lbl">Service Area</div><div class="con-val">Connecticut &amp; Surrounding Areas</div></div>
           </div>
         </div>
-        <div style="margin-top:2.5rem;padding:2rem;background:var(--cream2);border-radius:var(--radius-lg);">
-          <p style="font-size:0.85rem;font-style:italic;color:var(--brown);line-height:1.8;">"We take a limited number of new clients each season to ensure every project receives the full attention it deserves. If you're ready to begin, we'd love to hear from you."</p>
-        </div>
+        <div class="con-note">"We take a limited number of new clients each season to ensure every project receives the full attention it deserves. If you're ready to begin, we'd love to hear from you."</div>
       </div>
 
-      <div class="contact-form rr">
+      <div class="con-form anim from-right">
         <h3>Request a Consultation</h3>
         <p>Fill in the details below and we'll be in touch within 24 hours.</p>
-        <form onsubmit="handleFormSubmit(event)">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="f-name">Your Name</label>
-              <input type="text" id="f-name" placeholder="First &amp; Last Name" required>
-            </div>
-            <div class="form-group">
-              <label for="f-phone">Phone Number</label>
-              <input type="tel" id="f-phone" placeholder="(000) 000-0000">
-            </div>
+        <form onsubmit="submitForm(event)">
+          <div class="f-row">
+            <div class="f-group"><label>Your Name</label><input type="text" placeholder="First &amp; Last Name" required></div>
+            <div class="f-group"><label>Phone Number</label><input type="tel" placeholder="(000) 000-0000"></div>
           </div>
-          <div class="form-group">
-            <label for="f-email">Email Address</label>
-            <input type="email" id="f-email" placeholder="you@email.com" required>
+          <div class="f-group"><label>Email Address</label><input type="email" placeholder="you@email.com" required></div>
+          <div class="f-group"><label>Your City / Town</label><input type="text" placeholder="e.g. Greenwich, Westport, Darien"></div>
+          <div class="f-group">
+            <label>What kind of space are you looking to create?</label>
+            <textarea placeholder="Describe your vision — a meditation garden, waterfall, custom patio, full retreat... anything that comes to mind." required></textarea>
           </div>
-          <div class="form-group">
-            <label for="f-city">Your City / Town</label>
-            <input type="text" id="f-city" placeholder="e.g. Greenwich, Westport, Darien">
-          </div>
-          <div class="form-group">
-            <label for="f-vision">What kind of space are you looking to create?</label>
-            <textarea id="f-vision" placeholder="Describe your vision — a meditation garden, waterfall, custom patio, full retreat... anything that comes to mind." required></textarea>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="f-budget">Budget Range</label>
-              <select id="f-budget">
+          <div class="f-row">
+            <div class="f-group">
+              <label>Budget Range</label>
+              <select>
                 <option value="">Select a range</option>
                 <option>$10,000 – $25,000</option>
                 <option>$25,000 – $50,000</option>
@@ -2194,74 +1352,66 @@ footer {
                 <option>Not sure yet</option>
               </select>
             </div>
-            <div class="form-group">
-              <label for="f-timeline">Desired Timeline</label>
-              <select id="f-timeline">
+            <div class="f-group">
+              <label>Desired Timeline</label>
+              <select>
                 <option value="">Select timeline</option>
                 <option>As soon as possible</option>
-                <option>This season (Spring/Summer)</option>
+                <option>This season</option>
                 <option>Fall / Winter</option>
                 <option>Planning for next year</option>
                 <option>Flexible</option>
               </select>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary form-submit">Send My Consultation Request</button>
-          <p class="form-note">We respond to every inquiry personally, typically within one business day.</p>
+          <button type="submit" class="btn btn-gold f-submit">Send My Consultation Request</button>
+          <p class="f-note">We respond to every inquiry personally, typically within one business day.</p>
         </form>
       </div>
     </div>
-  </section>
+  </div>
 
-</div><!-- end contact -->
+</div><!-- /contact -->
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
-          <div class="nav-logo-mark">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-              <path d="M12 21C12 21 4 14 4 8.5a8 8 0 0 1 8-7 8 8 0 0 1 8 7C20 14 12 21 12 21z" fill="white" opacity="0.9"/>
-              <path d="M12 8c0 2-1.5 4-1.5 4S9 8.5 9 7a3 3 0 0 1 6 0c0 1.5-1.5 5-1.5 5S12 10 12 8z" fill="#b8960c"/>
-            </svg>
-          </div>
-          <span class="nav-brand-name" style="font-size:1.2rem;">Love Through Landscape</span>
-        </div>
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="foot-brand-name">Love Through Landscape</div>
         <p>Custom outdoor meditation stations, waterfalls, patios, and private garden retreats. Designed for stillness. Built with care. Created for homeowners who want something meaningful.</p>
       </div>
-      <div class="footer-col">
+      <div class="foot-col">
         <h5>Navigate</h5>
         <ul>
-          <li><a onclick="navigate('home')">Home</a></li>
-          <li><a onclick="navigate('about')">About</a></li>
-          <li><a onclick="navigate('meditation')">Meditation Stations</a></li>
-          <li><a onclick="navigate('retreats')">Outdoor Retreats</a></li>
-          <li><a onclick="navigate('gallery')">Gallery</a></li>
+          <li><a onclick="go('home')">Home</a></li>
+          <li><a onclick="go('about')">About</a></li>
+          <li><a onclick="go('meditation')">Meditation Stations</a></li>
+          <li><a onclick="go('retreats')">Outdoor Retreats</a></li>
+          <li><a onclick="go('gallery')">Gallery</a></li>
         </ul>
       </div>
-      <div class="footer-col">
-        <h5>Services</h5>
+      <div class="foot-col">
+        <h5>Spaces</h5>
         <ul>
           <li><span>Meditation Stations</span></li>
-          <li><span>Waterfall &amp; Ponds</span></li>
+          <li><span>Waterfalls &amp; Ponds</span></li>
           <li><span>Heart-Shaped Patios</span></li>
           <li><span>Yoga &amp; Breathwork Spaces</span></li>
           <li><span>Private Garden Retreats</span></li>
         </ul>
       </div>
-      <div class="footer-col">
+      <div class="foot-col">
         <h5>Contact</h5>
         <ul>
           <li><span>(860) 555-0148</span></li>
           <li><span>hello@lovethroughlandscape.com</span></li>
           <li><span>Connecticut &amp; Surrounding Areas</span></li>
-          <li style="margin-top:1rem;"><a onclick="navigate('contact')" style="color:var(--gold-light)!important;font-weight:500;">Request a Consultation →</a></li>
+          <li><a onclick="go('contact')" style="color:var(--gold-light)!important;font-weight:500">Request Consultation →</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
+    <div class="foot-bottom">
       <span>© 2025 Love Through Landscape. All rights reserved.</span>
       <span>Designed for stillness. Built with love.</span>
     </div>
@@ -2269,143 +1419,96 @@ footer {
 </footer>
 
 <script>
-// ============================================================
-// PAGE NAVIGATION
-// ============================================================
-const pages = {
-  home: 'page-home',
-  about: 'page-about',
-  meditation: 'page-meditation',
-  retreats: 'page-retreats',
-  gallery: 'page-gallery',
-  contact: 'page-contact'
+// ── PAGE ROUTING ──────────────────────────────
+const pageMap = {
+  home:'p-home', about:'p-about', meditation:'p-meditation',
+  retreats:'p-retreats', gallery:'p-gallery', contact:'p-contact'
 };
+let cur = 'home';
 
-let currentPage = 'home';
-
-function navigate(page) {
-  // Hide all pages
+function go(name) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  // Show target
-  const target = document.getElementById(pages[page]);
-  if (target) {
-    target.classList.add('active');
-    currentPage = page;
+  const el = document.getElementById(pageMap[name]);
+  if(el) el.classList.add('active');
+  cur = name;
+  window.scrollTo({top:0,behavior:'instant'});
+  document.querySelectorAll('.nav-links a[data-p]').forEach(a =>
+    a.classList.toggle('active', a.dataset.p === name)
+  );
+  updateNav();
+  // Kick animations for new page
+  setTimeout(runAnims, 80);
+}
+
+// ── NAV SCROLL STYLE ──────────────────────────
+function updateNav() {
+  const nav = document.getElementById('nav');
+  const y = window.scrollY;
+  const lightPages = ['about','meditation','retreats','gallery','contact'];
+  nav.classList.remove('solid','solid-light');
+  if(y > 50) {
+    if(cur === 'home') nav.classList.add('solid');
+    else nav.classList.add('solid-light');
   }
-  // Scroll to top
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-  // Update active nav links
-  document.querySelectorAll('.nav-links a[data-page]').forEach(a => {
-    a.classList.toggle('active-link', a.dataset.page === page);
+}
+window.addEventListener('scroll', updateNav, {passive:true});
+
+// ── SCROLL ANIMATIONS ─────────────────────────
+function runAnims() {
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, {threshold:0.1, rootMargin:'0px 0px -40px 0px'});
+
+  const pageId = pageMap[cur];
+  document.querySelectorAll('#'+pageId+' .anim').forEach(el => {
+    el.classList.remove('visible');
+    obs.observe(el);
   });
-  // Update navbar style
-  updateNavbar();
-  // Trigger animations
-  setTimeout(initReveal, 100);
+}
+window.addEventListener('scroll', () => {
+  // also observe elements on scroll
+  const pageId = pageMap[cur];
+  document.querySelectorAll('#'+pageId+' .anim:not(.visible)').forEach(el => {
+    const r = el.getBoundingClientRect();
+    if(r.top < window.innerHeight - 40) el.classList.add('visible');
+  });
+}, {passive:true});
+
+// ── MOBILE NAV ────────────────────────────────
+function openMob() {
+  document.getElementById('mob').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeMob() {
+  document.getElementById('mob').classList.remove('open');
+  document.body.style.overflow='';
 }
 
-// ============================================================
-// NAVBAR BEHAVIOR
-// ============================================================
-function updateNavbar() {
-  const navbar = document.getElementById('navbar');
-  const scrollY = window.scrollY;
-  const lightPages = ['about', 'meditation', 'retreats', 'gallery', 'contact'];
-
-  // Pages with light hero backgrounds get light navbar when scrolled
-  if (scrollY > 60) {
-    if (currentPage === 'home') {
-      navbar.classList.add('scrolled');
-      navbar.classList.remove('light');
-    } else {
-      navbar.classList.add('light');
-      navbar.classList.remove('scrolled');
-    }
-  } else {
-    navbar.classList.remove('scrolled', 'light');
-  }
-}
-
-window.addEventListener('scroll', updateNavbar, { passive: true });
-
-// ============================================================
-// SCROLL ANIMATIONS
-// ============================================================
-function initReveal() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-  document.querySelectorAll('#page-' + currentPage + ' .reveal, #page-' + currentPage + ' .rl, #page-' + currentPage + ' .rr')
-    .forEach(el => {
-      el.classList.remove('in');
-      observer.observe(el);
-    });
-}
-
-// ============================================================
-// HERO PARALLAX / LOAD
-// ============================================================
-window.addEventListener('load', () => {
-  const heroBg = document.getElementById('hero-bg-img');
-  if (heroBg) {
-    setTimeout(() => heroBg.classList.add('loaded'), 100);
-  }
-  initReveal();
-});
-
-// ============================================================
-// MOBILE NAV
-// ============================================================
-function openMobileNav() {
-  document.getElementById('mobileNav').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeMobileNav() {
-  document.getElementById('mobileNav').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-// ============================================================
-// GALLERY FILTER
-// ============================================================
-function filterGallery(btn, cat) {
-  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  const items = document.querySelectorAll('.masonry-item');
-  items.forEach(item => {
-    if (cat === 'all' || item.dataset.cat === cat) {
-      item.style.display = 'block';
-    } else {
-      item.style.display = 'none';
-    }
+// ── GALLERY FILTER ────────────────────────────
+function filter(btn, cat) {
+  document.querySelectorAll('.cat').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('.m-item').forEach(item => {
+    item.style.display = (cat==='all' || item.dataset.c===cat) ? 'block' : 'none';
   });
 }
 
-// ============================================================
-// FORM SUBMIT
-// ============================================================
-function handleFormSubmit(e) {
+// ── FORM ──────────────────────────────────────
+function submitForm(e) {
   e.preventDefault();
-  const btn = e.target.querySelector('.form-submit');
-  btn.textContent = 'Thank You — We\'ll Be In Touch';
-  btn.style.background = 'var(--deep-green)';
+  const btn = e.target.querySelector('.f-submit');
+  btn.textContent = "Thank You — We'll Be In Touch";
+  btn.style.background = 'var(--green-deep)';
   btn.disabled = true;
-  e.target.querySelectorAll('input, select, textarea').forEach(f => f.disabled = true);
+  e.target.querySelectorAll('input,select,textarea').forEach(f => f.disabled=true);
 }
 
-// ============================================================
-// SMOOTH SCROLL ON LOAD
-// ============================================================
-window.addEventListener('scroll', initReveal, { passive: true });
+// ── INIT ──────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
-  initReveal();
-  updateNavbar();
+  updateNav();
+  runAnims();
 });
 </script>
 </body>
